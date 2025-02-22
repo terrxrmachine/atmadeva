@@ -1,0 +1,16 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    background-color: var(--orange);
+    opacity: 0.995;
+    backdrop-filter: blur(4px);
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
