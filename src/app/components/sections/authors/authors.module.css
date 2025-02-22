@@ -1,0 +1,7 @@
+.authors {
+    background-color: var(--beige);
+}
+
+.authors__quote {
+    font-style: italic;
+}

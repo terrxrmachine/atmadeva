@@ -19,7 +19,7 @@ export default function Carousel({
     spaceBetween = 16
 }: CarouselProps) {
     const [activeIndex, setActiveIndex] = React.useState(0);
-    const [totalSlides, setTotalSlides] = React.useState(items.length);
+    const [totalSlides] = React.useState(items.length);
 
     const handleSlideChange = (swiper: SwiperType) => {
         setActiveIndex(swiper.activeIndex);
