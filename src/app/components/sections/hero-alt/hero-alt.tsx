@@ -6,9 +6,9 @@ import styles from './hero.module.css';
 import Button from '../../ui/button/button';
 import DateLocation from './components/date-location';
 
-const Hero = () => {
+export default function HeroAlt() {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <div className={styles.hero__content}>
 
         <h1 className={styles.hero__title}>
@@ -37,8 +37,8 @@ const Hero = () => {
         height={1000} 
         className={styles.hero__image} 
       />
-    </div>
+    </section>
   );
 };
 
-export default Hero;
+

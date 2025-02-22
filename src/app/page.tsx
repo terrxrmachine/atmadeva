@@ -1,5 +1,5 @@
 import Hero from './components/sections/hero/hero'
-import WhatIsRetreat from './components/sections/what-is-retreat'
+import WhatIsRetreat from './components/sections/what-is-retreat/what-is-retreat'
 import WhoIsItFor from './components/sections/who-is-it-for'
 import WhatToExpect from './components/sections/what-to-expect'
 import PlacesToVisit from './components/sections/places-to-visit'

@@ -1,27 +1,18 @@
 "use client"
 
-import { useState } from 'react';
-import HeaderButton from './components/header__button/header__button';
+import { navigationItems, useHeaderLogic } from './header-logic';
+
 import styles from './header.module.css';
 
-const navigationItems = [
-    { id: 'about', label: 'О ретрите' },
-    { id: 'program', label: 'Программа' },
-    { id: 'team', label: 'Команда' },
-    { id: 'location', label: 'Локация и Условия' },
-    { id: 'price', label: 'Стоимость' },
-];
+import HeaderLogo from './components/header__logo/header__logo';
+import HeaderButton from './components/header__button/header__button';
 
 export default function Header() {
-    const [activeSection, setActiveSection] = useState('about');
-
-    const scrollToSection = (id: string) => {
-        setActiveSection(id);
-        // Добавить логику скролла к секции
-    };
+    const { activeSection, scrollToSection } = useHeaderLogic();
 
     return (
         <header className={styles.header}>
+            <HeaderLogo />
             <nav className={styles.header__nav}>
                 {navigationItems.map((item) => (
                     <HeaderButton
