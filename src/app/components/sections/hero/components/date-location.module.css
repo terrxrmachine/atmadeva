@@ -3,10 +3,10 @@
     flex-direction: column;
     gap: 1rem;
 
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
         flex-direction: row;
         gap: 1rem;
-    }
+    } */
 }
 
 .date-location__item {

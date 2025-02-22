@@ -1,7 +1,7 @@
 export default function HeaderLogo() {
     return (
         <div>
-            gay
+            ĀtmāDeva Retreats
         </div>
     );
 }

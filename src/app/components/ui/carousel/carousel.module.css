@@ -1,0 +1,36 @@
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.slide {
+    width: auto;
+    height: auto;
+}
+
+/* Add these classes in global.css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pagination_bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--main-text);
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.pagination_bullet_active {
+    opacity: 1;
+}

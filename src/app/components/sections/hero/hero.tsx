@@ -9,8 +9,15 @@ import DateLocation from './components/date-location';
 const Hero = () => {
   return (
     <div className={styles.hero}>
+      <Image 
+        src="/hero.jpg" 
+        alt="Hero Image" 
+        width={1000} 
+        height={1000} 
+        className={styles.hero__image} 
+      />
+      
       <div className={styles.hero__content}>
-
         <h1 className={styles.hero__title}>
           <span className={styles.hero__title_accent}>
             Ретрит
@@ -29,14 +36,6 @@ const Hero = () => {
           <Button />
         </div>
       </div>
-
-      <Image 
-        src="/hero.jpg" 
-        alt="Hero Image" 
-        width={1000} 
-        height={1000} 
-        className={styles.hero__image} 
-      />
     </div>
   );
 };

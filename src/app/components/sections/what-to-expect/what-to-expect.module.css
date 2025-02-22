@@ -1,0 +1,21 @@
+.what-to-expect__items {
+    width: 100%;
+}
+
+.what-to-expect__grid {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
+.what-to-expect__carousel {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}

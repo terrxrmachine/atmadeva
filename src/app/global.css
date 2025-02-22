@@ -34,12 +34,18 @@ body {
 
 section {
   padding: 2rem;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 }
 
 h2 {
   font-size: clamp(2rem, 5vw + 1rem, 3rem);
   font-weight: 700;
+  line-height: 1.1;
 }
 
 h3 {

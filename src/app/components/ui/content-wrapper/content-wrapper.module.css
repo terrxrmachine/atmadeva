@@ -1,0 +1,10 @@
+.content_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        margin-bottom: 4rem;
+        gap: 2rem;
+    }
+}

@@ -1,0 +1,14 @@
+.who-is-it-for {
+    background-color: var(--beige);   
+}
+
+.who-is-it-for__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}

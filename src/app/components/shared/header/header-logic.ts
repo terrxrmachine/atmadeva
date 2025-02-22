@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const navigationItems = [
     { id: 'about', label: 'О ретрите' },
@@ -11,6 +11,22 @@ export const navigationItems = [
 
 export const useHeaderLogic = () => {
     const [activeSection, setActiveSection] = useState('about');
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [isMobileMenuOpen]);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     const scrollToSection = (id: string) => {
         setActiveSection(id);
@@ -32,5 +48,7 @@ export const useHeaderLogic = () => {
     return {
         activeSection,
         scrollToSection,
+        isMobileMenuOpen,
+        toggleMobileMenu,
     };
 };
