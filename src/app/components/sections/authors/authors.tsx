@@ -9,17 +9,15 @@ import QuoteCard from '../../ui/quote-card/quote-card';
 const Authors = () => {
   return (
     <section id="authors" className={styles.authors}>
-      <div>
+        <Image src="/authors/mishliz.jpg" alt="Authors Image" width={500} height={500} className={styles.authors__img_desktop}/>
         <ContentWrapper>
           <h2>АВТОРЫ И СОЗДАТЕЛИ РЕТРИТА</h2>
+          <Image src="/authors/mishliz.jpg" alt="Authors Image" width={500} height={500} className={styles.authors__img_mob}/>
+          <p><span>Михаил и Елизавета Канц</span> — путешественники, писатели и исследователи восточной философии. Год прожили в Индии, пять месяцев путешествовали по Гималаям, открывая самые захватывающие маршруты. </p>
+          <QuoteCard>
+            <p className={styles.authors__quote}>«Живя в Гималаях мы поняли: это место меняет сознание, наполняет своей красотой и пробуждает душу. Здесь должен побывать каждый! Так родилась идея этого ретрита.»</p>
+          </QuoteCard>
         </ContentWrapper>
-        <Image src="/authors.jpg" alt="Authors Image" width={500} height={500}/>
-        <p><span>Михаил и Елизавета Канц</span> — путешественники, писатели и исследователи восточной философии. Год прожили в Индии, пять месяцев путешествовали по Гималаям, открывая самые захватывающие маршруты. </p>
-      </div>
-
-      <QuoteCard>
-        <p className={styles.authors__quote}>«Живя в Гималаях мы поняли: это место меняет сознание, наполняет своей красотой и пробуждает душу. Здесь должен побывать каждый! Так родилась идея этого ретрита.»</p>
-      </QuoteCard>
     </section>
   );
 };
