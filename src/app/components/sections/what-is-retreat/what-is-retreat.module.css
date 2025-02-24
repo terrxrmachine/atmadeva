@@ -18,3 +18,7 @@
 .what-is-retreat__quote_accent {
     font-style: italic;
 }
+
+.what-is-retreat__img {
+    border-radius: 1rem;
+}

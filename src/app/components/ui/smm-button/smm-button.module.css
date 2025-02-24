@@ -1,0 +1,35 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--beige);
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button_small {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+}
+
+.button_medium {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+}
+
+.button_large {
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+}

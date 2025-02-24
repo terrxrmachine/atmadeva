@@ -33,7 +33,7 @@ const Hero = () => {
         <DateLocation />
 
         <div className={styles.hero__button}>
-          <Button />
+          <Button>Узнать больше</Button>
         </div>
       </div>
     </div>

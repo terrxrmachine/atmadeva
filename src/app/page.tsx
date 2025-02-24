@@ -6,9 +6,9 @@ import PlacesToVisit from './components/sections/places-to-visit/places-to-visit
 import DailySchedule from './components/sections/daily-schedule/daily-schedule'
 import Authors from './components/sections/authors/authors'
 import Team from './components/sections/team/team'
-import Location from './components/sections/location'
+import Location from './components/sections/location/location'
 import Pricing from './components/sections/pricing'
-import Booking from './components/sections/booking'
+import Booking from './components/sections/booking/booking'
 
 export default function Home() {
   return (

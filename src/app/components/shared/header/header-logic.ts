@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 
 export const navigationItems = [
     { id: 'about', label: 'О ретрите' },
-    { id: 'program', label: 'Программа' },
-    { id: 'teachers', label: 'Учителя' },
-    { id: 'schedule', label: 'Расписание' },
-    { id: 'price', label: 'Стоимость' },
-    { id: 'contacts', label: 'Контакты' },
+    { id: 'what-to-expect', label: 'Программа' },
+    { id: 'daily-schedule', label: 'Расписание' },
+    { id: 'authors', label: 'Команда' },
+    { id: 'pricing', label: 'Стоимость' },
+    { id: 'booking', label: 'Контакты' },
 ];
 
 export const useHeaderLogic = () => {
     const [activeSection, setActiveSection] = useState('about');
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);``
 
     useEffect(() => {
         if (isMobileMenuOpen) {
