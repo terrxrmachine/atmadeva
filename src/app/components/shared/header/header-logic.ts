@@ -11,7 +11,7 @@ export const navigationItems = [
 
 export const useHeaderLogic = () => {
     const [activeSection, setActiveSection] = useState('about');
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);``
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         if (isMobileMenuOpen) {
