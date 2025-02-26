@@ -4,8 +4,8 @@ import { navigationItems, useHeaderLogic } from './header-logic';
 
 import styles from './header.module.css';
 
-import HeaderLogo from './components/header__logo/header__logo';
-import HeaderButton from './components/header__button/header__button';
+import HeaderLogo from './components/header-logo/header-logo';
+import HeaderButton from './components/header-button/header-button';
 
 export default function Header() {
     const { activeSection, scrollToSection, isMobileMenuOpen, toggleMobileMenu } = useHeaderLogic();

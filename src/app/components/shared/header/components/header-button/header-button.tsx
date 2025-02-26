@@ -1,4 +1,4 @@
-import styles from './header__button.module.css'
+import styles from './header-button.module.css'
 
 interface HeaderButtonProps {
     id: string;
