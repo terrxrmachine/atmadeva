@@ -33,4 +33,5 @@ jobs:
             git pull origin main
             npm install
             npm run build
+            export PATH=$HOME/.nvm/versions/node/v22.14.0/bin:$PATH
             pm2 restart atmadeva || pm2 start npm --name "atmadeva" -- start
