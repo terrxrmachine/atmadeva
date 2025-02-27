@@ -33,7 +33,7 @@
 
 .burger {
     width: 30px;
-    height: 24px;
+    height: 20px;
     position: relative;
     background: none;
     border: none;
@@ -43,15 +43,16 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 60;
+    color: var(--deep-purple);
 
     @media (min-width: 768px) {
         display: none;
     }
 
     & span {
-        width: 100%;
+        width: 90%;
         height: 2px;
-        background-color: white;
+        background-color: var(--deep-purple);
         transition: transform 0.3s ease;
         transform-origin: left;
     }

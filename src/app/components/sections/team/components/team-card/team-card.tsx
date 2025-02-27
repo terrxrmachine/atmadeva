@@ -55,10 +55,10 @@ export default function TeamCard({
         <div className={styles['team-card__content']}>
           <p className={styles['team-card__text']}>
             <span className={styles['team-card__name']}>{name}</span> {position}
-            <div className={styles['team-card__actions']}>
+            <span className={styles['team-card__actions']}>
               {instagram && <SMMButton type="instagram" href={instagram} size="medium" />}
               {telegram && <SMMButton type="telegram" href={telegram} size="medium" />}
-            </div>
+            </span>
           </p>
           <div className={styles['team-card__actions']}>
             <MoreButton onClick={openModal} />

@@ -8,7 +8,6 @@ import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 import SMMButton from '../../ui/smm-button/smm-button';
 import { Phone, Mail } from 'lucide-react';
 import { Input } from '@/app/components/ui/input';
-// import { Textarea } from '@/app/components/ui/textarea';
 import Button from '../../ui/button/button';
 
 const Booking = () => {
@@ -16,7 +15,24 @@ const Booking = () => {
     <section id="booking" className={styles.booking}>
       <ContentWrapper>
         <h2>КАК ЗАБРОНИРОВАТЬ МЕСТО</h2>
-        <div className={styles.booking__instruction}>тут инструкция</div>
+        <div className={styles.booking__instruction}>
+          <div>
+            <h3>Заполните форму регистрации ниже</h3>
+            <p>Введите свое ФИО и номер для связи в любом из этих мессенджеров: Telegram, WhatsApp</p>
+          </div>
+          <div>
+            <h3>Ожидайте ответ от организатора в ваш мессенджер</h3>
+            <p>Мы свяжемся с вами в ближайшее время</p>
+          </div>
+          <div>
+            <h3>Внесите предоплату 50%</h3>
+            <p>Реквизиты вам отправит организатор Елизавета Канц</p>
+          </div>
+          <div>
+            <h3>Ваше место забронировано</h3>
+            <p>За месяц до начала мы добавим вас в общий чат участников в Телеграм. Куда придет информация как подготовиться, что взять с собой, как будет организован трансфер и другое.</p>
+          </div>
+        </div>
 
         <div className={styles.booking__contacts}>
           <div className={styles.booking__contact_block}>
@@ -61,9 +77,9 @@ const Booking = () => {
           </div>
 
           <div className={styles.booking__form}>
-            <Input type="text" placeholder="Имя" />
-            <Input type="email" placeholder="Email" />
-            <Input type="tel" placeholder="Телефон" />
+            <Input type="text" placeholder="Имя" className={styles.booking__input} />
+            <Input type="email" placeholder="Email/Telegram/WhatsApp" className={styles.booking__input} />
+            <Input type="tel" placeholder="Телефон" className={styles.booking__input} />
             {/* <Textarea placeholder="Сообщение"/> */}
             <Button>Отправить</Button>
           </div>
