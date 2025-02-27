@@ -19,15 +19,15 @@
 }
 
 .button_medium {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     padding: 12px;
 }
 
 .button_large {
     width: 64px;
     height: 64px;
-    padding: 16px;
+    padding: 6px;
 }
 
 .icon {

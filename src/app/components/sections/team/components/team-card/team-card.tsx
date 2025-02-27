@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from './team-card.module.css';
 import MoreButton from "../more-button/more-button";
 import TeamModal from '../team-modal/team-modal';
+import SMMButton from '@/app/components/ui/smm-button/smm-button';
 
 interface TeamCardProps {
   imageSrc: string;
@@ -16,6 +17,8 @@ interface TeamCardProps {
     src: string;
     alt: string;
   }[];
+  instagram?: string;
+  telegram?: string;
 }
 
 export default function TeamCard({ 
@@ -24,7 +27,9 @@ export default function TeamCard({
   name, 
   position, 
   description,
-  galleryImages = [] 
+  galleryImages = [],
+  instagram,
+  telegram
 }: TeamCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -40,12 +45,24 @@ export default function TeamCard({
   return (
     <>
       <div className={styles['team-card']}>
-        <Image src={imageSrc} alt={alt} width={500} height={500} className={styles['team-card__img']}/>
+        <Image 
+          src={imageSrc} 
+          alt={alt} 
+          width={500} 
+          height={500} 
+          className={styles['team-card__img']}
+        />
         <div className={styles['team-card__content']}>
           <p className={styles['team-card__text']}>
             <span className={styles['team-card__name']}>{name}</span> {position}
+            <div className={styles['team-card__actions']}>
+              {instagram && <SMMButton type="instagram" href={instagram} size="medium" />}
+              {telegram && <SMMButton type="telegram" href={telegram} size="medium" />}
+            </div>
           </p>
-          <MoreButton onClick={openModal} />
+          <div className={styles['team-card__actions']}>
+            <MoreButton onClick={openModal} />
+          </div>
         </div>
       </div>
       

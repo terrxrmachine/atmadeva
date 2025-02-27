@@ -9,7 +9,7 @@ interface MoreButtonProps {
 export default function MoreButton({ onClick }: MoreButtonProps) {
   return(
     <button className={styles['more-button']} onClick={onClick}>
-      Показать все
+      Узнать подробности
     </button>
   )
 }

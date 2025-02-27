@@ -30,8 +30,8 @@ const SMMButton: React.FC<SMMButtonProps> = ({ type, href, size = 'medium' }) =>
       <Image
         src={iconPaths[type]}
         alt={`${type} icon`}
-        width={24}
-        height={24}
+        width={204}
+        height={204}
         className={styles.icon}
       />
     </Link>

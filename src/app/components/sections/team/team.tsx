@@ -17,7 +17,8 @@ const teamMembersData = [
       { src: "/team/svet-2.jpg", alt: "Светлана Савицкая проводит занятие йогой" },
       { src: "/team/svet-3.jpg", alt: "Светлана Савицкая проводит занятие йогой" },
       { src: "/team/svet-4.jpg", alt: "Светлана Савицкая проводит занятие йогой" },
-    ]
+    ],
+    telegram: "https://t.me/sveta_savitskya"
   },
   {
     imageSrc: "/team/Mih-2.jpg",
@@ -30,7 +31,9 @@ const teamMembersData = [
       { src: "/team/Mih-2.jpg", alt: "Михаил Канц проводит консультацию" },
       { src: "/team/Mih-3.jpg", alt: "Михаил Канц проводит консультацию" },
       { src: "/team/Mih-4.jpg", alt: "Михаил Канц проводит консультацию" },
-    ]
+    ],
+    telegram: "https://t.me/mikhail_kantz_astro",
+    instagram: "https://instagram.com/mikhail_kantz"
   },
   {
     imageSrc: "/team/Val-2.jpg",
@@ -43,31 +46,31 @@ const teamMembersData = [
       { src: "/team/Val-2.jpg", alt: "Валентина Тореальба проводит сеанс звукотерапии" },
       { src: "/team/Val-3.jpg", alt: "Валентина Тореальба проводит сеанс звукотерапии" },
       { src: "/team/Val-4.jpg", alt: "Валентина Тореальба проводит сеанс звукотерапии" },
-    ]
+    ],
+    instagram: "https://www.instagram.com/core_strong_physical_therapy?igsh=ZnlrNG9wcnA2b21q"
   }
 ];
 
-const Team = () => {
+export default function Team() {
   return (
     <section id="team" className={styles.team}>
       <ContentWrapper>
         <h2>КОМАНДА МАСТЕРОВ</h2>
         <div className={styles.team__grid}>
           {teamMembersData.map((member, index) => (
-            <TeamCard
-              key={index}
-              imageSrc={member.imageSrc}
-              alt={member.alt}
-              name={member.name}
-              position={member.position}
-              description={member.description}
-              galleryImages={member.galleryImages}
-            />
+          <TeamCard
+            imageSrc={member.imageSrc}
+            alt={member.alt}
+            name={member.name}
+            position={member.position}
+            description={member.description}
+            galleryImages={member.galleryImages}
+            instagram={member.instagram}  // <-- важно!
+            telegram={member.telegram}  // <-- важно!
+          />
           ))}
         </div>
       </ContentWrapper>
     </section>
   );
 };
-
-export default Team;
