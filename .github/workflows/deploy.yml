@@ -29,8 +29,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /home/${{ secrets.SERVER_USER }}/atmadeva-retreats
+            cd /home/${{ secrets.SERVER_USER }}/atmadeva
             git pull origin main
             npm install
             npm run build
-            pm2 restart atmadeva-retreats || pm2 start npm --name "atmadeva" -- start
+            pm2 restart atmadeva || pm2 start npm --name "atmadeva" -- start
