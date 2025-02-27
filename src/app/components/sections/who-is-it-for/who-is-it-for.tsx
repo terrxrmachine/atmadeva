@@ -4,7 +4,6 @@ import Image from 'next/image';
 import styles from './who-is-it-for.module.css';
 
 import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
-import QuoteCard from '../../ui/quote-card/quote-card';
 
 const WhoIsItFor = () => {
   return (
