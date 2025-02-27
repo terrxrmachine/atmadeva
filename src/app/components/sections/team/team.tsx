@@ -59,14 +59,15 @@ export default function Team() {
         <div className={styles.team__grid}>
           {teamMembersData.map((member, index) => (
           <TeamCard
+            key={index}
             imageSrc={member.imageSrc}
             alt={member.alt}
             name={member.name}
             position={member.position}
             description={member.description}
             galleryImages={member.galleryImages}
-            instagram={member.instagram}  // <-- важно!
-            telegram={member.telegram}  // <-- важно!
+            instagram={member.instagram}
+            telegram={member.telegram}
           />
           ))}
         </div>
