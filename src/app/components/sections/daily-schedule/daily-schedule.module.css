@@ -15,7 +15,33 @@
     }
 }
 
+.daily-schedule__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+}
+
+.daily-schedule__list-item {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+}
+
 .daily-schedule__text {
     color: var(--gray);
     font-style: italic;
+    max-width: 700px;
+}
+
+.daily-schedule__video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    @media (min-width: 768px) {
+        flex-shrink: 0;
+        max-height: 800px;
+        max-width: 600px;
+    }
 }

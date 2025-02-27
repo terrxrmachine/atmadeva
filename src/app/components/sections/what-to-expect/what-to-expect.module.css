@@ -12,8 +12,15 @@
     }
 }
 
+.what-to-expect__title {
+    max-width: 900px;
+}
+
 .what-to-expect__carousel {
     display: block;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
 
     @media (min-width: 768px) {
         display: none;

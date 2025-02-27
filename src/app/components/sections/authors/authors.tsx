@@ -10,7 +10,7 @@ const Authors = () => {
   return (
     <section id="authors" className={styles.authors}>
         <Image 
-          src="/authors/mishliz.jpg" 
+          src="/authors/authors.jpg" 
           alt="Authors Image" 
           width={0} 
           height={0} 
@@ -21,7 +21,7 @@ const Authors = () => {
         <ContentWrapper>
           <h2>АВТОРЫ И СОЗДАТЕЛИ РЕТРИТА</h2>
           <Image 
-            src="/authors/mishliz.jpg" 
+            src="/authors/authors.jpg" 
             alt="Authors Image" 
             width={0} 
             height={0} 

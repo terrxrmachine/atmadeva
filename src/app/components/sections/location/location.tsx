@@ -7,44 +7,64 @@ import PhotoCarousel from '../../ui/photo-carousel/photo-carousel';
 
 const photos = [
   {
-    src: '/location/1.jpg',
+    src: '/location/1loc.jpg',
     alt: 'Фото локации 1'
   },
   {
-    src: '/location/2.jpg',
+    src: '/location/2loc.jpg',
     alt: 'Фото локации 2'
   },
   {
-    src: '/location/3.png',
+    src: '/location/3loc.jpg',
     alt: 'Фото локации 3'
   },
   {
-    src: '/location/4.png',
-    alt: 'Фото локации 2'
+    src: '/location/4loc.jpg',
+    alt: 'Фото локации 4'
   },
   {
-    src: '/location/5.png',
-    alt: 'Фото локации 2'
+    src: '/location/5loc.jpg',
+    alt: 'Фото локации 5'
   },
   {
-    src: '/location/6.jpg',
-    alt: 'Фото локации 2'
+    src: '/location/6loc.jpg',
+    alt: 'Фото локации 6'
   },
   {
-    src: '/location/7.jpg',
-    alt: 'Фото локации 2'
+    src: '/location/7loc.jpg',
+    alt: 'Фото локации 7'
   },
   {
-    src: '/location/8.jpg',
-    alt: 'Фото локации 2'
+    src: '/location/8loc.jpg',
+    alt: 'Фото локации 8'
   },
   {
-    src: '/location/9.jpg',
-    alt: 'Фото локации 2'
+    src: '/location/9loc.jpg',
+    alt: 'Фото локации 9'
   },
   {
-    src: '/location/10.jpg',
-    alt: 'Фото локации 2'
+    src: '/location/10loc.jpg',
+    alt: 'Фото локации 10'
+  },
+  {
+    src: '/location/11loc.jpg',
+    alt: 'Фото локации 11'
+  },
+  {
+    src: '/location/12loc.jpg',
+    alt: 'Фото локации 12'
+  },
+  {
+    src: '/location/13loc.jpg',
+    alt: 'Фото локации 13'
+  },
+  {
+    src: '/location/14loc.jpg',
+    alt: 'Фото локации 14'
+  },
+  {
+    src: '/location/15loc.jpg',
+    alt: 'Фото локации 15'
   },
 ];
 
@@ -53,8 +73,11 @@ const Location = () => {
     <section id="location" className={styles.location}>
       <ContentWrapper>
         <h2>ЛОКАЦИЯ И УСЛОВИЯ</h2>
+        <div className={styles['location__info']}>
+          <p>Наш ретрит пройдет в живописном регионе Химачал-Прадеш, <span>Дхарамсала</span> — месте силы и духовных практик. </p>
+          <p>Мы разместимся в ретритном центре <span>Arahantas</span>, где вас ждут уютные двухместные номера и сбалансированное трехразовое питание: саттвическая, индийская и вегетарианская кухня.</p>
+        </div>
         <PhotoCarousel photos={photos} />
-        <p>Адрес: Дхарамсала, Индия</p>
       </ContentWrapper>
     </section>
   );

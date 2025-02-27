@@ -1,0 +1,15 @@
+/* .pricing {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+} */
+
+.pricing__price {
+  font-size: clamp(1.8rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+}
+
+.pricing__payment {
+    font-style: italic;
+    color: var(--gray);
+}

@@ -53,12 +53,22 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  font-weight: 600;
+}
+
 p, li {
   font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
 }
 
 ol {
   list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+ul {
+  list-style: disc;
   padding-left: 1.5rem;
 }
 

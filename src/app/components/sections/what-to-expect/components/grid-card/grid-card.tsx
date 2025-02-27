@@ -14,7 +14,7 @@ export default function GridCard({ imageSrc, text }: GridCardProps) {
     return (
         <div className={styles['grid-card']}>
             <Image src={imageSrc} alt={text} width={500} height={500} className={styles.img}/>
-            <p>{text}</p>
+            <p className={styles['grid-card__text']}>{text}</p>
         </div>
     );
 }

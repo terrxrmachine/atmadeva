@@ -12,7 +12,7 @@ const photos = [
   { text: 'Дыхательные и энергетические практики', src: '/what-to-expect/breathing.jpg' },
   { text: 'Лекции о связи космоса и человека', src: '/what-to-expect/cosmos.jpg' },
   { text: 'Звукотерапия', src: '/what-to-expect/sound.jpg' },
-  { text: 'Трекинги по живописным горным маршрутам', src: '/what-to-expect/trekking.jpg' },
+  { text: 'Трекинги по живописным горным маршрутам', src: '/what-to-expect/trekking.webp' },
   { text: 'Экскурсии по местам силы', src: '/what-to-expect/places.jpg' },
   { text: 'Буддийская атмосфера и индийский колорит', src: '/what-to-expect/buddhism.jpg' },
   { text: 'Душевное общение и теплые музыкальные вечера', src: '/what-to-expect/music.jpg' }
@@ -22,8 +22,8 @@ const WhatToExpect = () => {
   return (
     <section id="what-to-expect" className={styles['what-to-expect']}>
       <ContentWrapper>
-        <h2>ЧТО ТЕБЯ ЖДЕТ</h2>
-        <h3>Программа ретрита насыщенная, но выстроена так, чтобы каждая практика, каждое впечатление и новая информация усваивались мягко и гармонично.</h3>
+        <h2>ЧТО ВАС ЖДЕТ НА РЕТРИТЕ</h2>
+        <h3 className={styles['what-to-expect__title']}>Программа ретрита насыщенная, но выстроена так, чтобы каждая практика, каждое впечатление и новая информация усваивались мягко и гармонично.</h3>
 
         <div className={styles['what-to-expect__items']}>
           {/* Desktop Grid */}

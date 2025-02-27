@@ -21,4 +21,9 @@
 
 .what-is-retreat__img {
     border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
 }

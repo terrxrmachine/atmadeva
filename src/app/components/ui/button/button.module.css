@@ -1,0 +1,22 @@
+/* bg-[#E9A662] text-[#FDFCF6] px-8 py-3 rounded-full text-lg md:text-xl lg:text-2xl font-semibold hover:bg-[#dd9e5e] hover:scale-105 ease-in-out transition-colors shadow-md */
+
+.button {
+    background: var(--orange);
+    color: var(--off-white);
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: color 200ms;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    transform: scale(1.03);
+}
+
+.button:active {
+    transform: scale(1);
+}
+

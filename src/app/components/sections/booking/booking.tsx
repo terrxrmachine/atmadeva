@@ -31,29 +31,29 @@ const Booking = () => {
             </div>
 
             <div className={styles.contact__info}>
-              <Link href="tel:+91 123 456 7890" className={styles.contact__link}>
+              <Link href="tel:+79168199227" className={styles.contact__link}>
                 <p className={styles.contact__text}>
                   <Phone />
-                  +91 123 456 7890
+                  +7 (916) 819-92-27
                 </p>
               </Link>
               
-              <Link href="mailto:atmadeva@example.com" className={styles.contact__link}>
+              <Link href="mailto:kusova.lizaveta@gmail.com" className={styles.contact__link}>
                 <p className={styles.contact__text}>
                   <Mail />
-                  atmadeva@example.com
+                  kusova.lizaveta@gmail.com
                 </p>
               </Link>
 
               <div className={styles.contact__social}>
                 <SMMButton 
                   type="whatsapp" 
-                  href="https://wa.me/911234567890" 
+                  href="https://wa.me/79168199227" 
                   size="medium"
                 />
                 <SMMButton 
                   type="telegram" 
-                  href="https://t.me/atmadeva"
+                  href="https://t.me/elizaveta_kantz"
                   size="medium"
                 />
               </div>

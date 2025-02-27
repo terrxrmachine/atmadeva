@@ -7,7 +7,7 @@ import DailySchedule from './components/sections/daily-schedule/daily-schedule'
 import Authors from './components/sections/authors/authors'
 import Team from './components/sections/team/team'
 import Location from './components/sections/location/location'
-import Pricing from './components/sections/pricing'
+import Pricing from './components/sections/pricing/pricing'
 import Booking from './components/sections/booking/booking'
 
 export default function Home() {

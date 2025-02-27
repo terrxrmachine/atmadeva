@@ -5,4 +5,5 @@
     max-width: 1200px;
     justify-self: center;
     border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

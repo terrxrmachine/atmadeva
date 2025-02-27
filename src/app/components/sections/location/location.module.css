@@ -1,3 +1,10 @@
 .location {
     background-color: var(--beige);
 }
+
+.location__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 900px;
+}
