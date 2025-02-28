@@ -7,6 +7,10 @@
 .pricing__price {
   font-size: clamp(1.8rem, 3vw + 0.5rem, 2.5rem);
   font-weight: 600;
+  background: var(--orange);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: fit-content;
 }
 
 .pricing__payment {

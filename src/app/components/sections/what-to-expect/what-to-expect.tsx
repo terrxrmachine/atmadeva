@@ -18,7 +18,7 @@ const photos = [
   { text: 'Душевное общение и теплые музыкальные вечера', src: '/what-to-expect/music.jpg' }
 ];
 
-const WhatToExpect = () => {
+export default function WhatToExpect() {
   return (
     <section id="what-to-expect" className={styles['what-to-expect']}>
       <ContentWrapper>
@@ -50,5 +50,3 @@ const WhatToExpect = () => {
     </section>
   );
 };
-
-export default WhatToExpect;

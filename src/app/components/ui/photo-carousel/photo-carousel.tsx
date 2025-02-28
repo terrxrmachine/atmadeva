@@ -77,15 +77,18 @@ export default function PhotoCarousel({ photos }: PhotoCarouselProps) {
       >
         {photos.map((photo, index) => (
           <SwiperSlide key={index} className={styles.slide}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className={styles.image}
-                sizes="(max-width: 768px) 100vw, 75vw"
-                priority
-              />
+            <div className={styles.contentWrapper}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className={styles.image}
+                  sizes="(max-width: 768px) 100vw, 75vw"
+                  priority
+                />
+              </div>
+              <p className={styles.caption}>{photo.alt}</p> {/* Подпись теперь точно появится! */}
             </div>
           </SwiperSlide>
         ))}

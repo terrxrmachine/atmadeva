@@ -64,6 +64,33 @@
   opacity: 1;
 }
 
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  padding-bottom: 12px;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-color, #333);
+  background: rgba(255, 255, 255, 0.6); /* Легкий фон для читаемости */
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+
 /* На десктопе - соотношение сторон 4:3 */
 @media (min-width: 768px) {
   .slide {
