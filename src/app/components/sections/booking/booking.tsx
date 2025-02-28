@@ -38,7 +38,7 @@ const Booking = () => {
           <div className={styles.booking__contact_block}>
             <div className={styles.contact__photo}>
               <Image 
-                src="/booking/liz.jpg" 
+                src="/booking/liz.webp" 
                 alt="Елизавета" 
                 width={200} 
                 height={200}

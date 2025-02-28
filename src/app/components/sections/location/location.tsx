@@ -7,63 +7,63 @@ import PhotoCarousel from '../../ui/photo-carousel/photo-carousel';
 
 const photos = [
   {
-    src: '/location/1loc.jpg',
+    src: '/location/1loc.webp',
     alt: 'Фото локации 1'
   },
   {
-    src: '/location/2loc.jpg',
+    src: '/location/2loc.webp',
     alt: 'Фото локации 2'
   },
   {
-    src: '/location/3loc.jpg',
+    src: '/location/3loc.webp',
     alt: 'Фото локации 3'
   },
   {
-    src: '/location/4loc.jpg',
+    src: '/location/4loc.webp',
     alt: 'Фото локации 4'
   },
   {
-    src: '/location/5loc.jpg',
+    src: '/location/5loc.webp',
     alt: 'Фото локации 5'
   },
   {
-    src: '/location/6loc.jpg',
+    src: '/location/6loc.webp',
     alt: 'Фото локации 6'
   },
   {
-    src: '/location/7loc.jpg',
+    src: '/location/7loc.webp',
     alt: 'Фото локации 7'
   },
   {
-    src: '/location/8loc.jpg',
+    src: '/location/8loc.webp',
     alt: 'Фото локации 8'
   },
   {
-    src: '/location/9loc.jpg',
+    src: '/location/9loc.webp',
     alt: 'Фото локации 9'
   },
   {
-    src: '/location/10loc.jpg',
+    src: '/location/10loc.webp',
     alt: 'Фото локации 10'
   },
   {
-    src: '/location/11loc.jpg',
+    src: '/location/11loc.webp',
     alt: 'Фото локации 11'
   },
   {
-    src: '/location/12loc.jpg',
+    src: '/location/12loc.webp',
     alt: 'Фото локации 12'
   },
   {
-    src: '/location/13loc.jpg',
+    src: '/location/13loc.webp',
     alt: 'Фото локации 13'
   },
   {
-    src: '/location/14loc.jpg',
+    src: '/location/14loc.webp',
     alt: 'Фото локации 14'
   },
   {
-    src: '/location/15loc.jpg',
+    src: '/location/15loc.webp',
     alt: 'Фото локации 15'
   },
 ];
