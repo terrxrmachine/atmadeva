@@ -107,6 +107,7 @@ const Booking = () => {
                 height={200}
                 className={styles.contact__image}
                 loading="lazy"
+                priority
               />
             </div>
             <div className={styles.contact__info}>

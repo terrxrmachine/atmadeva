@@ -25,6 +25,7 @@ export default function Hero() {
         height={1000} 
         className={styles.hero__image} 
         loading="lazy"
+        priority
       />
       
       <div className={styles.hero__content}>
