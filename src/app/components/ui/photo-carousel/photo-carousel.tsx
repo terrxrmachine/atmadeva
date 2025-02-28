@@ -14,6 +14,7 @@ interface PhotoCarouselProps {
     src: string;
     alt: string;
   }[];
+  showCaption?: boolean;
 }
 
 // Navigation buttons component
@@ -44,21 +45,11 @@ const NavigationButtons = ({
   );
 };
 
-export default function PhotoCarousel({ photos }: PhotoCarouselProps) {
-  // Fix: properly type the Swiper instance
+export default function PhotoCarousel({ photos, showCaption = true }: PhotoCarouselProps) {
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
+  const handlePrev = () => swiperRef.current?.slidePrev();
+  const handleNext = () => swiperRef.current?.slideNext();
 
   return (
     <div className={styles.photoCarousel}>
@@ -67,13 +58,8 @@ export default function PhotoCarousel({ photos }: PhotoCarouselProps) {
         slidesPerView="auto"
         spaceBetween={16}
         className={styles.swiper}
-        mousewheel={{
-          forceToAxis: true,
-          sensitivity: 1,
-        }}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        mousewheel={{ forceToAxis: true, sensitivity: 1 }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
       >
         {photos.map((photo, index) => (
           <SwiperSlide key={index} className={styles.slide}>
@@ -88,16 +74,13 @@ export default function PhotoCarousel({ photos }: PhotoCarouselProps) {
                   priority
                 />
               </div>
-              <p className={styles.caption}>{photo.alt}</p> {/* Подпись теперь точно появится! */}
+              {showCaption && <p className={styles.caption}>{photo.alt}</p>}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      
-      <NavigationButtons 
-        onPrevClick={handlePrev}
-        onNextClick={handleNext}
-      />
+
+      <NavigationButtons onPrevClick={handlePrev} onNextClick={handleNext} />
     </div>
   );
 }

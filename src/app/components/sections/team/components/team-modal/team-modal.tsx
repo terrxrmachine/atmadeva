@@ -26,7 +26,7 @@ export default function TeamModal({
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={name}>
       <div className={styles['team-modal']}>
-        <PhotoCarousel photos={photos} />
+        <PhotoCarousel showCaption={false} photos={photos} />
         <div className={styles['team-modal__info']}>
           <p className={styles['team-modal__position']}>{position}</p>
           <div className={styles['team-modal__description']} dangerouslySetInnerHTML={{ __html: description }} />

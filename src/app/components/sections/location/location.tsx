@@ -77,7 +77,7 @@ const Location = () => {
           <p>Наш ретрит пройдет в живописном регионе Химачал-Прадеш, <span>Дхарамсала</span> — месте силы и духовных практик. </p>
           <p>Мы разместимся в ретритном центре <span>Arahantas</span>, где вас ждут уютные двухместные номера и сбалансированное трехразовое питание: саттвическая, индийская и вегетарианская кухня.</p>
         </div>
-        <PhotoCarousel photos={photos} />
+        <PhotoCarousel showCaption={false} photos={photos} />
       </ContentWrapper>
     </section>
   );
