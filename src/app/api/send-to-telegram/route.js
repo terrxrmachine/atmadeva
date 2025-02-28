@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const data = await request.json();
-    const { name, contact, phone, message } = data;
+    // const { name, contact, phone, message } = data;
+
     
     // Telegram Bot token и ID чата (замените на ваши)
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
