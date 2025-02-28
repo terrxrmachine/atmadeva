@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -6,7 +8,14 @@ import styles from './hero.module.css';
 import Button from '../../ui/button/button';
 import DateLocation from './components/date-location';
 
-const Hero = () => {
+export default function Hero() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className={styles.hero}>
       <Image 
@@ -34,11 +43,9 @@ const Hero = () => {
         <DateLocation />
 
         <div className={styles.hero__button}>
-          <Button>Узнать больше</Button>
+          <Button onClick={scrollToAbout}>Узнать больше</Button>
         </div>
       </div>
     </div>
   );
 };
-
-export default Hero;

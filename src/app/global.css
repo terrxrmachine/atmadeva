@@ -76,6 +76,23 @@ span {
   font-weight: 600;
 }
 
+label {
+  font-weight: 600;
+  display: flex; /* Используем flexbox для центрирования */
+  align-items: center; /* Центрируем содержимое по вертикали */
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  width: 40px;
+  height: 40px;
+  min-width: 40px; /* Не даёт кружку ужиматься */
+  min-height: 40px; /* Не даёт кружку ужиматься */
+  border-radius: 50%;
+  border: 2px solid var(--deep-purple);
+  text-align: center;
+  white-space: nowrap; /* Предотвращает перенос текста */
+  overflow: hidden; /* Гарантирует, что содержимое не выйдет за границы */
+}
+
+
 
 
 @layer base {

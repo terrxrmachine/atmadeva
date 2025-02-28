@@ -1,9 +1,21 @@
 import styles from './button.module.css';
 
-export default function Button({ children }: { children: React.ReactNode }) {
-    return (
-        <button className={styles.button}>
-            {children}
-        </button>
-    );
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';  
+  disabled?: boolean;                   
+}
+
+export default function Button({ children, onClick, type = 'button', disabled = false }: ButtonProps) {
+  return (
+    <button 
+      className={styles.button} 
+      onClick={onClick} 
+      type={type} 
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
 }

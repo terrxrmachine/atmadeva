@@ -9,26 +9,32 @@ const PlacesToVisit = () => {
       <ContentWrapper>
         <h2>МЕСТА, КОТОРЫЕ МЫ ПОСЕТИМ</h2>
 
-        <ol>
-          <li>
-            <span>Верхний Баксу</span> — прогулка по старинным улочкам, посещение базара, храм у источника и трек к водопаду
-          </li>
-          <li>
-            <span>Водопад Галлу, Дарамкот</span> — центр медитаций, горные тропы, кафе с фантастическими закатами
-          </li>
-          <li>
-            <span>Маклеод Гандж</span> — резиденция Далай-Ламы, буддистские центры, тибетские базары
-          </li>
-          <li>
-            <span>Деревня Надди</span> — знакомство с традиционной индийской культурой, смотровые площадки на закаты
-          </li>
-          <li>
-            <span>Трекинг на Триунд</span> — восхождение на плато с панорамными видами на Гималаи
-          </li>
-          <li>
-            <span>Нижняя Дхарамсала</span> — монастырь Гьюто, тибетский институт Норбулинка и чайные плантации Кангра
-          </li>
-        </ol>
+        <div className={styles['places-to-visit__list']}>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="1">1</label> Верхний Баксу</h3>
+            <p>— прогулка по старинным улочкам, посещение базара, храм у источника и трек к водопаду</p>
+          </div>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="2">2</label> Водопад Галлу, Дарамкот</h3>
+            <p>— центр медитаций, горные тропы, кафе с фантастическими закатами</p>
+          </div>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="3">3</label> Маклеод Гандж</h3>
+            <p>— резиденция Далай-Ламы, буддистские центры, тибетские базары</p>
+          </div>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="4">4</label> Деревня Надди</h3>
+            <p>— знакомство с традиционной индийской культурой, смотровые площадки на закаты</p>
+          </div>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="5">5</label> Трекинг на Триунд</h3>
+            <p>— восхождение на плато с панорамными видами на Гималаи</p>
+          </div>
+          <div className={styles['places-to-visit__list_item']}>
+            <h3 className={styles['places-to-visit__list_title']}><label htmlFor="6">6</label> Нижняя Дхарамсала</h3>
+            <p>— монастырь Гьюто, тибетский институт Норбулинка и чайные плантации Кангра</p>
+          </div>
+        </div>
       </ContentWrapper>
     </section>
   );
