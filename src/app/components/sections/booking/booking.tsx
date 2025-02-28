@@ -43,6 +43,7 @@ const Booking = () => {
                 width={200} 
                 height={200}
                 className={styles.contact__image}
+                loading="lazy"
               />
             </div>
 

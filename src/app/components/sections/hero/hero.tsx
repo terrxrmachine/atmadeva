@@ -15,6 +15,7 @@ const Hero = () => {
         width={1000} 
         height={1000} 
         className={styles.hero__image} 
+        loading="lazy"
       />
       
       <div className={styles.hero__content}>

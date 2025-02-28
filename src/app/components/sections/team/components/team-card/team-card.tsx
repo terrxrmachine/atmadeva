@@ -51,6 +51,7 @@ export default function TeamCard({
           width={500} 
           height={500} 
           className={styles['team-card__img']}
+          loading="lazy"
         />
         <div className={styles['team-card__content']}>
           <p className={styles['team-card__text']}>

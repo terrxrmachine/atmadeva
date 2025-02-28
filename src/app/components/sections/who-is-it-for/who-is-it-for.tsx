@@ -13,22 +13,22 @@ const WhoIsItFor = () => {
 
         <div className={styles['who-is-it-for__list']}>
           <div className={styles['who-is-it-for__item']}>
-            <Image src="/icons/spa.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']}/>
+            <Image src="/icons/spa.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']} loading="lazy"/>
             <p>Хочет перезагрузиться и почувствовать внутреннюю гармонию</p>
           </div>
 
           <div className={styles['who-is-it-for__item']}>
-            <Image src="/icons/retreat.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']}/>
+            <Image src="/icons/retreat.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']} loading="lazy"/>
             <p>Любит природу и мечтает увидеть Гималаи во всей красе </p>
           </div>
 
           <div className={styles['who-is-it-for__item']}>
-            <Image src="/icons/yoga-pose.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']}/>
+            <Image src="/icons/yoga-pose.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']} loading="lazy"/>
             <p>Готов к мягким практикам без сложных нагрузок</p>
           </div>
 
           <div className={styles['who-is-it-for__item']}>
-            <Image src="/icons/insight.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']}/>
+            <Image src="/icons/insight.png" alt="woman" width={500} height={500} className={styles['who-is-it-for__item-img']} loading="lazy"/>
             <p>Открыт к новому, самопознанию и духовным инсайтам</p>
           </div>
         </div>
