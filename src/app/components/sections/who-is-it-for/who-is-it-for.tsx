@@ -36,7 +36,7 @@ const WhoIsItFor = () => {
         </div>
 
         <div className={styles['who-is-it-for__video-wrapper']}>
-          <video src="/who-is-it-for/wiif.webm" autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['who-is-it-for__video']} />
+          <video src="/who-is-it-for/wiif.webm"  webkit-playsinline autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['who-is-it-for__video']} />
           <div className={styles['who-is-it-for__video-quote']}>
             <p className={styles['who-is-it-for__video-text']}>Неважно, есть ли у вас опыт в йоге и медитации — все практики адаптированы и подходят даже для новичков. Все маршруты и трекинги также среднего уровня сложности. Главное — ваше намерение окунуться в это удивительное путешествие!</p>
           </div>
