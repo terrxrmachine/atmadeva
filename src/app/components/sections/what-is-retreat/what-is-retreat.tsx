@@ -18,7 +18,7 @@ export default function WhatIsRetreat() {
           <p><span>Наш ретрит</span> — это путешествие не только в мир удивительной природы и культуры, но и в духовный, внутренний мир каждого из нас. Здесь вы сможете глубже почувствовать свое тело, услышать голос души и раскрыть новые грани сознания. </p>
         </ContentWrapper>
 
-        <Image src="/what-is-retreat/retreat.webp" alt="Retreat Image" width={1000} height={1000} className={styles['what-is-retreat__img']} loading="lazy" priority/>
+        <Image src="/what-is-retreat/retreat.webp" alt="Retreat Image" width={1000} height={1000} className={styles['what-is-retreat__img']} priority/>
       </div>
 
       <QuoteCard>

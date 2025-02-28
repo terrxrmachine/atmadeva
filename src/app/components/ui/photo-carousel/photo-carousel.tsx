@@ -84,7 +84,6 @@ export default function PhotoCarousel({ photos }: PhotoCarouselProps) {
                 fill
                 className={styles.image}
                 sizes="(max-width: 768px) 100vw, 75vw"
-                loading="lazy"
                 priority
               />
             </div>

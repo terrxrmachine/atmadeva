@@ -24,7 +24,6 @@ export default function Hero() {
         width={1000} 
         height={1000} 
         className={styles.hero__image} 
-        loading="lazy"
         priority
       />
       
