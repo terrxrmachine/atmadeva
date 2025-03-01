@@ -6,13 +6,12 @@ import ContentWrapper from '@/app/components/ui/content-wrapper/content-wrapper'
 
 const teamMembersData = [
   {
-    imageSrc: "/team/Svet-0.webp",
+    imageSrc: "/team/Svet-1.webp",
     alt: "Светлана Савицкая",
     name: "Светлана Савицкая",
     position: "мастер йоги, дыхательных практик и медитаций",
     description: "<strong>Светлана Савицкая</strong> — мастер йоги, дыхательных практик и медитаций. Эксперт в телесно-ориентированной и энергетической терапии с 20-летним опытом. Изучала йогу и медитации в Индии, глубоко интегрируя работу с телом, энергией и сознанием. Помогает восстанавливать ментальное и физическое здоровье. Использует в своей работе ченнелинг, регрессию, целительные сеансы и создает индивидуальные медитации.",
     galleryImages: [
-      { src: "/team/Svet-0.webp", alt: "Светлана Савицкая - основное фото" },
       { src: "/team/svet-1.webp", alt: "Светлана Савицкая проводит занятие йогой" },
       { src: "/team/svet-2.webp", alt: "Светлана Савицкая проводит занятие йогой" },
       { src: "/team/svet-3.webp", alt: "Светлана Савицкая проводит занятие йогой" },
@@ -21,7 +20,7 @@ const teamMembersData = [
     telegram: "https://t.me/sveta_savitskya"
   },
   {
-    imageSrc: "/team/Mih-2.webp",
+    imageSrc: "/team/Mih-1.webp",
     alt: "Михаил Канц",
     name: "Михаил Канц",
     position: "ведический астролог, астропсихолог, писатель и исследователь",
@@ -36,7 +35,7 @@ const teamMembersData = [
     instagram: "https://instagram.com/mikhail_kantz"
   },
   {
-    imageSrc: "/team/Val-2.webp",
+    imageSrc: "/team/Val-1.webp",
     alt: "Валентина Тореальба",
     name: "Валентина Тореальба",
     position: "доктор физиотерапии, гипнотерапевт и саундхилер",

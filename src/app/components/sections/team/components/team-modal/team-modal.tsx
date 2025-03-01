@@ -19,7 +19,7 @@ export default function TeamModal({
   isOpen,
   onClose,
   name,
-  position,
+  // position,
   description,
   photos
 }: TeamModalProps) {
@@ -28,7 +28,7 @@ export default function TeamModal({
       <div className={styles['team-modal']}>
         <PhotoCarousel showCaption={false} photos={photos} />
         <div className={styles['team-modal__info']}>
-          <p className={styles['team-modal__position']}>{position}</p>
+          {/* <p className={styles['team-modal__position']}>{position}</p> */}
           <div className={styles['team-modal__description']} dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </div>

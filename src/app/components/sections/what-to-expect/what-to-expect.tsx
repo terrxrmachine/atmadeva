@@ -15,7 +15,7 @@ const photos = [
   { text: 'Трекинги по живописным горным маршрутам', src: '/what-to-expect/trekking.webp' },
   { text: 'Экскурсии по местам силы', src: '/what-to-expect/places.jpg' },
   { text: 'Буддийская атмосфера и индийский колорит', src: '/what-to-expect/buddhism.jpg' },
-  { text: 'Душевное общение и теплые музыкальные вечера', src: '/what-to-expect/music.jpg' }
+  { text: 'Душевное общение и теплые вечера', src: '/what-to-expect/music.jpg' }
 ];
 
 export default function WhatToExpect() {
