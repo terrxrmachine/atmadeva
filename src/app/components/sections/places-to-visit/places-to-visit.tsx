@@ -4,7 +4,6 @@ import styles from './places-to-visit.module.css';
 
 import PhotoCarousel from '../../ui/photo-carousel/photo-carousel';
 import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
-import PlaceCard from './components/place-card/place-card';
 
 const placesData = [
   {
