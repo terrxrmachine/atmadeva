@@ -1,7 +1,100 @@
 import React from 'react';
 
-import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 import styles from './places-to-visit.module.css';
+
+import PhotoCarousel from '../../ui/photo-carousel/photo-carousel';
+import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
+import PlaceCard from './components/place-card/place-card';
+
+const placesData = [
+  {
+    number: "1",
+    title: "Верхний Баксу",
+    description: "— прогулка по старинным улочкам, посещение базара, храм у источника и трек к водопаду",
+    imageSrc: "/places-to-visit/1.jpg"
+  },
+  {
+    number: "2",
+    title: "Водопад Галлу, Дарамкот",
+    description: "— центр медитаций, горные тропы, кафе с фантастическими закатами",
+    imageSrc: "/places-to-visit/2.jpg"
+  },
+  {
+    number: "3",
+    title: "Маклеод Гандж",
+    description: "— резиденция Далай-Ламы, буддистские центры, тибетские базары",
+    imageSrc: "/places-to-visit/3.jpg"
+  },
+  {
+    number: "4",
+    title: "Деревня Надди",
+    description: "— знакомство с традиционной индийской культурой, смотровые площадки на закаты",
+    imageSrc: "/places-to-visit/4.png"
+  },
+  {
+    number: "5",
+    title: "Трекинг на Триунд",
+    description: "— восхождение на плато с панорамными видами на Гималаи",
+    imageSrc: "/places-to-visit/5.png"
+  },
+  {
+    number: "6",
+    title: "Нижняя Дхарамсала",
+    description: "— монастырь Гьюто, тибетский институт Норбулинка и чайные плантации Кангра",
+    imageSrc: "/places-to-visit/6.jpg"
+  }
+];
+
+const photos = [
+  {
+    src: '/places-to-visit/1.jpg',
+    alt: 'Фото локации 1'
+  },
+  {
+    src: '/places-to-visit/2.jpg',
+    alt: 'Фото локации 2'
+  },
+  {
+    src: '/places-to-visit/3.jpg',
+    alt: 'Фото локации 3'
+  },
+  {
+    src: '/places-to-visit/4.png',
+    alt: 'Фото локации 4'
+  },
+  {
+    src: '/places-to-visit/5.png',
+    alt: 'Фото локации 5'
+  },
+  {
+    src: '/places-to-visit/6.jpg',
+    alt: 'Фото локации 6'
+  },
+  {
+    src: '/places-to-visit/7.jpg',
+    alt: 'Фото локации 7'
+  },
+  {
+    src: '/places-to-visit/8.jpg',
+    alt: 'Фото локации 8'
+  },
+  {
+    src: '/places-to-visit/9.jpg',
+    alt: 'Фото локации 9'
+  },
+  {
+    src: '/places-to-visit/10.png',
+    alt: 'Фото локации 10'
+  },
+  {
+    src: '/places-to-visit/11.jpg',
+    alt: 'Фото локации 11'
+  },
+  {
+    src: '/places-to-visit/12.jpg',
+    alt: 'Фото локации 12'
+  },
+];
 
 const PlacesToVisit = () => {
   return (
@@ -9,6 +102,20 @@ const PlacesToVisit = () => {
       <ContentWrapper>
         <h2>МЕСТА, КОТОРЫЕ МЫ ПОСЕТИМ</h2>
 
+        {/* Desktop Grid */}
+        <div className={styles['places-to-visit__grid']}>
+          {placesData.map((place, index) => (
+            <PlaceCard
+              key={index}
+              number={place.number}
+              title={place.title}
+              description={place.description}
+              imageSrc={place.imageSrc}
+            />
+          ))}
+        </div>
+
+        {/* Mobile List */}
         <div className={styles['places-to-visit__list']}>
           <div className={styles['places-to-visit__list_item']}>
             <h3 className={styles['places-to-visit__list_title']}><label htmlFor="1">1</label> Верхний Баксу</h3>
@@ -34,6 +141,10 @@ const PlacesToVisit = () => {
             <h3 className={styles['places-to-visit__list_title']}><label htmlFor="6">6</label> Нижняя Дхарамсала</h3>
             <p>— монастырь Гьюто, тибетский институт Норбулинка и чайные плантации Кангра</p>
           </div>
+        </div>
+
+        <div className={styles['places-to-visit__photo-carousel']}>
+          <PhotoCarousel showCaption={false} photos={photos} />
         </div>
       </ContentWrapper>
     </section>
