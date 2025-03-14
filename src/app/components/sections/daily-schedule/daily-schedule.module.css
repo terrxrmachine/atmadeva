@@ -5,7 +5,6 @@
     box-sizing: border-box;
 
     @media (min-width: 768px) {
-        margin-bottom: 4rem;
         flex-direction: row;
         gap: 4rem;
 
