@@ -7,51 +7,51 @@ import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 
 const photos = [
   {
-    src: '/places-to-visit/1.jpg',
+    src: '/places-to-visit/1.webp',
     alt: 'Фото локации 1'
   },
   {
-    src: '/places-to-visit/2.jpg',
+    src: '/places-to-visit/2.webp',
     alt: 'Фото локации 2'
   },
   {
-    src: '/places-to-visit/3.jpg',
+    src: '/places-to-visit/3.webp',
     alt: 'Фото локации 3'
   },
   {
-    src: '/places-to-visit/4.png',
+    src: '/places-to-visit/4.webp',
     alt: 'Фото локации 4'
   },
   {
-    src: '/places-to-visit/5.png',
+    src: '/places-to-visit/5.webp',
     alt: 'Фото локации 5'
   },
   {
-    src: '/places-to-visit/6.jpg',
+    src: '/places-to-visit/6.webp',
     alt: 'Фото локации 6'
   },
   {
-    src: '/places-to-visit/7.jpg',
+    src: '/places-to-visit/7.webp',
     alt: 'Фото локации 7'
   },
   {
-    src: '/places-to-visit/8.jpg',
+    src: '/places-to-visit/8.webp',
     alt: 'Фото локации 8'
   },
   {
-    src: '/places-to-visit/9.jpg',
+    src: '/places-to-visit/9.webp',
     alt: 'Фото локации 9'
   },
   {
-    src: '/places-to-visit/10.png',
+    src: '/places-to-visit/10.webp',
     alt: 'Фото локации 10'
   },
   {
-    src: '/places-to-visit/11.jpg',
+    src: '/places-to-visit/11.webp',
     alt: 'Фото локации 11'
   },
   {
-    src: '/places-to-visit/12.jpg',
+    src: '/places-to-visit/12.webp',
     alt: 'Фото локации 12'
   },
 ];
