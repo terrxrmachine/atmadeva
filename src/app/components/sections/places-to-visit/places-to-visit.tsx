@@ -103,7 +103,7 @@ const PlacesToVisit = () => {
         <h2>МЕСТА, КОТОРЫЕ МЫ ПОСЕТИМ</h2>
 
         {/* Desktop Grid */}
-        <div className={styles['places-to-visit__grid']}>
+        {/* <div className={styles['places-to-visit__grid']}>
           {placesData.map((place, index) => (
             <PlaceCard
               key={index}
@@ -113,7 +113,7 @@ const PlacesToVisit = () => {
               imageSrc={place.imageSrc}
             />
           ))}
-        </div>
+        </div> */}
 
         {/* Mobile List */}
         <div className={styles['places-to-visit__list']}>

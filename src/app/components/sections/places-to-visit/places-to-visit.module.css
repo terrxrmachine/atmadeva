@@ -5,7 +5,7 @@
 }
 
 /* Desktop Grid */
-.places-to-visit__grid {
+/* .places-to-visit__grid {
     display: none;
     box-sizing: border-box;
 
@@ -25,7 +25,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
     }
-}
+} */
 
 /* Mobile List */
 .places-to-visit__list {
@@ -36,10 +36,6 @@
     width: 100%;
     padding: 2rem 0rem 0rem 0rem;
     box-sizing: border-box;
-
-    @media (min-width: 768px) {
-        display: none;
-    }
 }
 
 .places-to-visit__list_item {
@@ -67,8 +63,4 @@
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-
-    @media (min-width: 768px) {
-        display: none;
-    }
 }
