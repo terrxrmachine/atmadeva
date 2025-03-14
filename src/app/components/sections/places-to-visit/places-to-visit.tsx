@@ -5,45 +5,6 @@ import styles from './places-to-visit.module.css';
 import PhotoCarousel from '../../ui/photo-carousel/photo-carousel';
 import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 
-const placesData = [
-  {
-    number: "1",
-    title: "Верхний Баксу",
-    description: "— прогулка по старинным улочкам, посещение базара, храм у источника и трек к водопаду",
-    imageSrc: "/places-to-visit/1.jpg"
-  },
-  {
-    number: "2",
-    title: "Водопад Галлу, Дарамкот",
-    description: "— центр медитаций, горные тропы, кафе с фантастическими закатами",
-    imageSrc: "/places-to-visit/2.jpg"
-  },
-  {
-    number: "3",
-    title: "Маклеод Гандж",
-    description: "— резиденция Далай-Ламы, буддистские центры, тибетские базары",
-    imageSrc: "/places-to-visit/3.jpg"
-  },
-  {
-    number: "4",
-    title: "Деревня Надди",
-    description: "— знакомство с традиционной индийской культурой, смотровые площадки на закаты",
-    imageSrc: "/places-to-visit/4.png"
-  },
-  {
-    number: "5",
-    title: "Трекинг на Триунд",
-    description: "— восхождение на плато с панорамными видами на Гималаи",
-    imageSrc: "/places-to-visit/5.png"
-  },
-  {
-    number: "6",
-    title: "Нижняя Дхарамсала",
-    description: "— монастырь Гьюто, тибетский институт Норбулинка и чайные плантации Кангра",
-    imageSrc: "/places-to-visit/6.jpg"
-  }
-];
-
 const photos = [
   {
     src: '/places-to-visit/1.jpg',
