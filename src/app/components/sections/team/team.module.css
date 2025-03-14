@@ -3,10 +3,21 @@
     flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+    
+    @media (min-width: 992px) {
+        gap: 3rem;
+    }
+    
+    @media (min-width: 1200px) {
         gap: 4rem;
     }
 }

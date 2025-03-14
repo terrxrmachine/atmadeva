@@ -39,10 +39,15 @@
 
     @media (min-width: 768px) {
         flex-direction: row;
+        flex-wrap: wrap;
         text-align: left;
         align-items: center;
         justify-content: center;
         padding: 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        flex-wrap: nowrap;
     }
 }
 
@@ -63,8 +68,8 @@
     @media (min-width: 768px) {
         flex-direction: row;
         gap: 2rem;
-        min-width: 600px;
-        min-height: 400px;
+        max-width: 100%;
+        width: auto;
     }
 }
 
@@ -83,8 +88,8 @@
 
     @media (min-width: 768px) {
         padding: 2rem;
-        min-width: 600px;
-        min-height: 400px;
+        max-width: 100%;
+        width: auto;
     }
 }
 
@@ -121,6 +126,7 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
+    max-width: 100%;
 }
 
 
@@ -175,11 +181,12 @@
     align-items: center;
 }
 
-/* Add these styles to your booking.module.css file */
+/* Messenger toggle styles */
 
 .messenger_toggle {
   width: 100%;
   margin-bottom: 16px;
+  box-sizing: border-box;
 }
 
 .toggle_container {
@@ -189,6 +196,7 @@
   overflow: hidden;
   margin-bottom: 8px;
   border: 1px solid #e2e8f0;
+  box-sizing: border-box;
 }
 
 .toggle_button {
@@ -199,6 +207,9 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .toggle_button:first-child {

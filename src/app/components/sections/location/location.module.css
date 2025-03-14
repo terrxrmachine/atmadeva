@@ -1,5 +1,7 @@
 .location {
     background-color: var(--beige);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .location__info {
@@ -7,4 +9,6 @@
     flex-direction: column;
     gap: 1rem;
     max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
 }

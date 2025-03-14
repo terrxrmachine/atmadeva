@@ -1,19 +1,34 @@
 .what-to-expect__items {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .what-to-expect__grid {
     display: none;
+    box-sizing: border-box;
 
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+    
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+    
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
 }
 
 .what-to-expect__title {
     max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .what-to-expect__carousel {
@@ -21,6 +36,10 @@
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 
     @media (min-width: 768px) {
         display: none;

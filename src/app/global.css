@@ -36,30 +36,77 @@ section {
   padding: 2rem;
   justify-content: center;
   align-items: center;
+  min-height: 100vh; /* Секция занимает как минимум всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  overflow: visible; /* Изменено с hidden на visible для корректного отображения в Edge */
+  height: auto; /* Добавлено для корректного расширения при большом контенте */
+
+  /* Для мобильных устройств используем 90vh для лучшего UX */
+  @media (max-width: 767px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: 90vh;
+  }
 
   @media (min-width: 768px) {
     padding: 4rem;
   }
+  
+  @media (min-width: 992px) {
+    padding: 5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 6rem;
+  }
+
+  /* Контейнер для содержимого с автоматической прокруткой */
+  & > div {
+    max-height: none; /* Убираем ограничение по высоте */
+    overflow-y: visible; /* Изменено с auto на visible */
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray) transparent;
+
+    /* Стилизация полосы прокрутки для WebKit браузеров */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--gray);
+      border-radius: 6px;
+    }
+  }
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw + 1rem, 3rem);
+  font-size: clamp(1.5rem, 5vw + 1rem, 3rem);
   font-weight: 700;
   line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: clamp(1.2rem, 3vw + 0.5rem, 1.5rem);
+  font-size: clamp(1rem, 3vw + 0.5rem, 1.5rem);
   font-weight: 600;
 }
 
 h4 {
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  font-size: clamp(0.875rem, 2vw + 0.5rem, 1.25rem);
   font-weight: 600;
 }
 
 p, li {
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  font-size: clamp(0.875rem, 2vw + 0.5rem, 1.25rem);
 }
 
 ol {
@@ -91,9 +138,6 @@ label {
   white-space: nowrap; /* Предотвращает перенос текста */
   overflow: hidden; /* Гарантирует, что содержимое не выйдет за границы */
 }
-
-
-
 
 @layer base {
   :root {
@@ -159,5 +203,70 @@ label {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Специальные стили для кросс-браузерной совместимости */
+.grid, .flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+  }
+}
+
+/* Стили для корректного отображения в Edge */
+@supports (-ms-ime-align: auto) or (-ms-accelerator: true) {
+  section {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 4rem 2rem !important;
+  }
+  
+  section > div {
+    height: auto !important;
+    max-height: none !important;
+  }
+  
+  img, video {
+    max-height: 500px !important;
+  }
+  
+  .grid, .flex {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Глобальные стили для изображений */
+img, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: block; /* Добавлено для устранения проблем с отображением в Edge */
+  
+  /* Адаптивные размеры для разных экранов */
+  @media (max-width: 767px) {
+    max-height: 50vh;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    max-height: 60vh;
+  }
+  
+  @media (min-width: 1200px) {
+    max-height: 65vh; /* Уменьшено с 70vh для лучшего отображения в Edge */
+  }
+
+  /* Специальные стили для Edge и IE */
+  @supports (-ms-ime-align: auto) {
+    max-height: 60vh !important;
+    height: auto !important;
   }
 }

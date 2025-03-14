@@ -6,7 +6,7 @@ import ContentWrapper from '@/app/components/ui/content-wrapper/content-wrapper'
 
 const teamMembersData = [
   {
-    imageSrc: "/team/Svet-1.webp",
+    imageSrc: "/team/svet-1.webp",
     alt: "Светлана Савицкая",
     name: "Светлана Савицкая",
     position: "йога-терапевт, мастер медитаций, проводник целительных энергий",
