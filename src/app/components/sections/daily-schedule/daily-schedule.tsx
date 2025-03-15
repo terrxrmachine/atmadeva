@@ -38,7 +38,7 @@ export default function DailySchedule() {
           <p className={styles['daily-schedule__text']}>Программа может меняться в зависимости от потребностей группы и погоды, чтобы каждый участник получил максимум от путешествия.</p>
         </ContentWrapper>
 
-        <video src="/daily-schedule/daily-schedule.webm"  webkit-playsinline autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['daily-schedule__video']} />
+        <video src="/daily-schedule/daily-schedule.webm" webkit-playsinline="true" autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['daily-schedule__video']} />
       </div>
 
 

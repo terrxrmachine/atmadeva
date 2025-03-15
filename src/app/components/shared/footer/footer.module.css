@@ -2,7 +2,6 @@
     background-color: var(--orange);
     color: var(--deep-purple);
     padding: 60px 0 30px;
-    margin-top: -80px; /* Negative margin to eliminate white space */
     opacity: 0.995;
     backdrop-filter: blur(4px);
 }
