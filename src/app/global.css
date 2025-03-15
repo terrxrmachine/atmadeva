@@ -20,6 +20,12 @@ body {
   color: var(--deep-purple);
   background: var(--off-white);
   font-family: var(--font-montserrat);
+  margin: 0;
+}
+
+main {
+  display: block;
+  margin: 0;
 }
 
 ::selection {
