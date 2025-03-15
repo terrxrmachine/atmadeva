@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const navigationItems = [
     { id: 'about', label: 'О ретрите' },
@@ -13,6 +14,9 @@ export const navigationItems = [
 export const useHeaderLogic = () => {
     const [activeSection, setActiveSection] = useState('about');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
+    const isGalleryPage = pathname === '/gallery';
 
     useEffect(() => {
         if (isMobileMenuOpen) {
@@ -87,6 +91,19 @@ export const useHeaderLogic = () => {
     const scrollToSection = (id: string) => {
         setActiveSection(id);
         
+        // If we're on the gallery page, navigate to the main page and scroll to the section
+        if (isGalleryPage) {
+            // Check if it's a regular section (not an external page)
+            const navItem = navigationItems.find(item => item.id === id);
+            
+            if (navItem && !navItem.isExternalPage) {
+                // Navigate to the main page with the section hash
+                router.push(`/#${id}`);
+                return;
+            }
+        }
+        
+        // Normal scrolling behavior for the main page
         const section = document.getElementById(id);
         const header = document.querySelector('header');
         
