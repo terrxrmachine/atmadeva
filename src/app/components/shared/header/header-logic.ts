@@ -7,6 +7,7 @@ export const navigationItems = [
     { id: 'authors', label: 'Команда' },
     { id: 'pricing', label: 'Стоимость' },
     { id: 'booking', label: 'Контакты' },
+    { id: 'gallery', label: 'Галерея', isExternalPage: true, href: '/gallery' },
 ];
 
 export const useHeaderLogic = () => {

@@ -22,12 +22,21 @@ export default function Footer() {
                         <ul className={styles.footer__nav_list}>
                             {navigationItems.map((item) => (
                                 <li key={item.id} className={styles.footer__nav_item}>
-                                    <a 
-                                        href={`#${item.id}`} 
-                                        className={styles.footer__nav_link}
-                                    >
-                                        {item.label}
-                                    </a>
+                                    {item.isExternalPage ? (
+                                        <a 
+                                            href={item.href} 
+                                            className={styles.footer__nav_link}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <a 
+                                            href={`#${item.id}`} 
+                                            className={styles.footer__nav_link}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    )}
                                 </li>
                             ))}
                         </ul>

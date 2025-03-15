@@ -31,6 +31,8 @@ export default function Header() {
                             label={item.label}
                             isActive={activeSection === item.id}
                             onClick={scrollToSection}
+                            isExternalPage={item.isExternalPage}
+                            href={item.href}
                         />
                     ))}
                 </nav>
@@ -47,6 +49,8 @@ export default function Header() {
                                 scrollToSection(id);
                                 toggleMobileMenu();
                             }}
+                            isExternalPage={item.isExternalPage}
+                            href={item.href}
                         />
                     ))}
                 </nav>

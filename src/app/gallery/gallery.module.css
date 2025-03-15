@@ -1,0 +1,143 @@
+.container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 120px; /* Space for fixed header */
+  padding-bottom: 4rem; /* Extra space at the bottom to prevent footer overlap */
+  min-height: calc(100vh - 300px); /* Ensure minimum height to push footer down */
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--deep-purple);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.categoryButton {
+  background-color: var(--off-white);
+  color: var(--deep-purple);
+  border: 1px solid var(--deep-purple);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.categoryButton:hover {
+  background-color: var(--beige);
+}
+
+.categoryButton.active {
+  background-color: var(--orange);
+  color: var(--deep-purple);
+  border-color: var(--orange);
+}
+
+.gallery {
+  column-count: 3; /* Default for desktop */
+  column-gap: 1.5rem;
+  width: 100%;
+}
+
+.imageContainer {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block; /* Important for masonry layout */
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.image {
+  width: 100% !important;
+  height: auto !important;
+  position: relative !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Responsive column counts */
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: var(--deep-purple);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    padding-top: 100px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .categories {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .categoryButton {
+    flex: 0 0 auto;
+  }
+}
+
+/* For larger screens, make the grid more dense */
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}

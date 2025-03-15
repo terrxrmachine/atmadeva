@@ -1,0 +1,147 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import styles from './gallery.module.css';
+
+// Type for our image data
+interface ImageData {
+  src: string;
+  alt: string;
+  category: string;
+}
+
+export default function GalleryPage() {
+  const [images, setImages] = useState<ImageData[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [categories, setCategories] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Function to collect all images from the public directory
+    const fetchImages = async () => {
+      setIsLoading(true);
+      
+      // Collect images from different folders
+      const locationImages = Array.from({ length: 15 }, (_, i) => ({
+        src: `/location/${i + 1}loc.webp`,
+        alt: `Локация ${i + 1}`,
+        category: 'location'
+      }));
+      
+      const placesToVisitImages = Array.from({ length: 12 }, (_, i) => ({
+        src: `/places-to-visit/${i + 1}.webp`,
+        alt: `Место ${i + 1}`,
+        category: 'places'
+      }));
+      
+      const teamImages = [
+        ...Array.from({ length: 4 }, (_, i) => ({
+          src: `/team/Mih-${i + 1}.webp`,
+          alt: `Михаил ${i + 1}`,
+          category: 'team'
+        })),
+        ...Array.from({ length: 5 }, (_, i) => ({
+          src: `/team/Svet-${i}.webp`,
+          alt: `Светлана ${i}`,
+          category: 'team'
+        })),
+        ...Array.from({ length: 4 }, (_, i) => ({
+          src: `/team/Val-${i + 1}.webp`,
+          alt: `Валентина ${i + 1}`,
+          category: 'team'
+        }))
+      ];
+      
+      const whatToExpectImages = [
+        { src: '/what-to-expect/breathing.JPG.webp', alt: 'Дыхательные практики', category: 'activities' },
+        { src: '/what-to-expect/buddhism.JPG.webp', alt: 'Буддизм', category: 'activities' },
+        { src: '/what-to-expect/cosmos.JPG.webp', alt: 'Космос', category: 'activities' },
+        { src: '/what-to-expect/music.JPG.webp', alt: 'Музыка', category: 'activities' },
+        { src: '/what-to-expect/places.JPG.webp', alt: 'Места', category: 'activities' },
+        { src: '/what-to-expect/sound.JPG.webp', alt: 'Звукотерапия', category: 'activities' },
+        { src: '/what-to-expect/trekking.webp', alt: 'Треккинг', category: 'activities' },
+        { src: '/what-to-expect/yoga.webp', alt: 'Йога', category: 'activities' }
+      ];
+      
+      const otherImages = [
+        { src: '/hero.jpg', alt: 'Главное изображение', category: 'other' },
+        { src: '/what-is-retreat/retreat.webp', alt: 'Ретрит', category: 'other' },
+        { src: '/authors/authors.webp', alt: 'Авторы', category: 'other' }
+      ];
+      
+      // Combine all images
+      const allImages = [
+        ...locationImages,
+        ...placesToVisitImages,
+        ...teamImages,
+        ...whatToExpectImages,
+        ...otherImages
+      ];
+      
+      // Extract unique categories
+      const uniqueCategories = ['all', ...new Set(allImages.map(img => img.category))];
+      
+      setImages(allImages);
+      setCategories(uniqueCategories);
+      setIsLoading(false);
+    };
+    
+    fetchImages();
+  }, []);
+  
+  // Filter images based on selected category
+  const filteredImages = selectedCategory === 'all' 
+    ? images 
+    : images.filter(img => img.category === selectedCategory);
+
+  return (
+    <div className={styles.container} style={{ marginBottom: '2rem' }}>
+      <h1 className={styles.title}>Галерея</h1>
+      
+      <div className={styles.categories}>
+        {categories.map(category => (
+          <button
+            key={category}
+            className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category === 'all' && 'Все'}
+            {category === 'location' && 'Локации'}
+            {category === 'places' && 'Места для посещения'}
+            {category === 'team' && 'Команда'}
+            {category === 'activities' && 'Активности'}
+            {category === 'other' && 'Другое'}
+          </button>
+        ))}
+      </div>
+      
+      {isLoading ? (
+        <div className={styles.loading}>Загрузка изображений...</div>
+      ) : (
+        <div className={styles.gallery}>
+          {filteredImages.map((image, index) => (
+            <div key={index} className={styles.imageContainer}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={500}
+                  height={350}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={styles.image}
+                  onError={(e) => {
+                    // Handle image loading errors
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                  unoptimized={true} // To maintain original quality
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
