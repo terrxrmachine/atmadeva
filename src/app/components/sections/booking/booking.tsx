@@ -34,7 +34,7 @@ const Booking = () => {
     try {
       // Формируем сообщение
       const messenger = selectedMessenger === 'telegram' ? 'Telegram' : 'WhatsApp';
-      const message = `🔔 Новая заявка на бронирование!\n\n👤 Имя: ${name}\n📱 Контакт: ${contact}\n☎️ ${messenger}: ${phone}`;
+      const message = `🔔 Новая заявка на бронирование!\n\n👤 Имя: ${name}\n📱 E-mail: ${contact}\n☎️ ${messenger}: ${phone}`;
       
       // Отправка данных на ваш сервер/API endpoint
       const response = await fetch('/api/send-to-telegram', {
@@ -72,7 +72,7 @@ const Booking = () => {
 
   // Получаем placeholder в зависимости от выбранного мессенджера
   const getPhonePlaceholder = () => {
-    return selectedMessenger === 'telegram' ? 'Номер телефона для Telegram' : 'Номер телефона для WhatsApp';
+    return selectedMessenger === 'telegram' ? 'Номер или тэг для Telegram' : 'Номер телефона для WhatsApp';
   };
 
   return (
@@ -183,7 +183,7 @@ const Booking = () => {
             </div>
             
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'Отправить'}
+              {isSubmitting ? 'Отправка...' : 'забронировать место'}
             </Button>
             {submitStatus.message && (
               <div className={`${styles.status_message} ${styles[submitStatus.type]}`}>

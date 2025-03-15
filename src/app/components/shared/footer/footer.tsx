@@ -3,6 +3,8 @@
 import styles from './footer.module.css';
 import { navigationItems } from '../header/header-logic';
 
+import HeaderLogo from '../header/components/header-logo/header-logo';
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     
@@ -11,7 +13,7 @@ export default function Footer() {
             <div className={styles.footer__container}>
                 <div className={styles.footer__content}>
                     <div className={styles.footer__info}>
-                        <h3 className={styles.footer__title}>ATMADEVA</h3>
+                        <HeaderLogo />
                         <p className={styles.footer__description}>
                             Ретрит для глубокого погружения в практики йоги и медитации
                         </p>
@@ -44,11 +46,11 @@ export default function Footer() {
                     
                     <div className={styles.footer__contact}>
                         <h4 className={styles.footer__contact_title}>Контакты</h4>
-                        <a href="mailto:info@atmadeva.com" className={styles.footer__contact_link}>
-                            info@atmadeva.com
+                        <a href="mailto:elizaveta.kantz@yandex.com" className={styles.footer__contact_link}>
+                            elizaveta.kantz@yandex.com
                         </a>
-                        <a href="tel:+79991234567" className={styles.footer__contact_link}>
-                            +7 (999) 123-45-67
+                        <a href="tel:+79168199227" className={styles.footer__contact_link}>
+                            +7 (916) 819-92-27
                         </a>
                     </div>
                 </div>

@@ -9,10 +9,10 @@ import Button from '../../ui/button/button';
 import DateLocation from './components/date-location';
 
 export default function Hero() {
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToBooking = () => {
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -43,7 +43,7 @@ export default function Hero() {
         <DateLocation />
 
         <div className={styles.hero__button}>
-          <Button onClick={scrollToAbout}>Узнать больше</Button>
+          <Button onClick={scrollToBooking}>Узнать больше</Button>
         </div>
       </div>
     </div>
