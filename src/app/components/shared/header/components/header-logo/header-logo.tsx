@@ -22,7 +22,7 @@ export default function HeaderLogo() {
     return (
         <div className={styles.logo}>
             <Image src="/logo-atmadeva.png" alt="Logo" width={32} height={32} className={styles.logo__image}/>
-            ĀtmāDeva Retreats
+            ĀtmāDeva <div className={styles.logo__text}>Retreats</div>
         </div>
     );
 }
