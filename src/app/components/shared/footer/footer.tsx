@@ -1,8 +1,62 @@
-export default function footer() {
+"use client";
+
+import styles from './footer.module.css';
+import { navigationItems } from '../header/header-logic';
+
+export default function Footer() {
+    const currentYear = new Date().getFullYear();
+    
     return (
-        <footer className="w-full bottom-0">
-            <div className="footer__container">
-                <p>© 2025 ATMADEVA. Все права защищены.</p>
+        <footer className={styles.footer}>
+            <div className={styles.footer__container}>
+                <div className={styles.footer__content}>
+                    <div className={styles.footer__info}>
+                        <h3 className={styles.footer__title}>ATMADEVA</h3>
+                        <p className={styles.footer__description}>
+                            Ретрит для глубокого погружения в практики йоги и медитации
+                        </p>
+                    </div>
+                    
+                    <div className={styles.footer__nav}>
+                        <h4 className={styles.footer__nav_title}>Навигация</h4>
+                        <ul className={styles.footer__nav_list}>
+                            {navigationItems.map((item) => (
+                                <li key={item.id} className={styles.footer__nav_item}>
+                                    <a 
+                                        href={`#${item.id}`} 
+                                        className={styles.footer__nav_link}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    
+                    <div className={styles.footer__contact}>
+                        <h4 className={styles.footer__contact_title}>Контакты</h4>
+                        <a href="mailto:info@atmadeva.com" className={styles.footer__contact_link}>
+                            info@atmadeva.com
+                        </a>
+                        <a href="tel:+79991234567" className={styles.footer__contact_link}>
+                            +7 (999) 123-45-67
+                        </a>
+                    </div>
+                </div>
+                
+                <div className={styles.footer__bottom}>
+                    <p className={styles.footer__copyright}>
+                        © {currentYear} ATMADEVA. Все права защищены.
+                    </p>
+                    <div className={styles.footer__social}>
+                        <a href="#" className={styles.footer__social_link} aria-label="Telegram">
+                            Telegram
+                        </a>
+                        <a href="#" className={styles.footer__social_link} aria-label="WhatsApp">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
             </div>
         </footer>
     );
