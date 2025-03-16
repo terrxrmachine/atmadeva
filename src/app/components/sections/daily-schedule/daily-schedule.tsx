@@ -39,7 +39,8 @@ export default function DailySchedule() {
           <p className={styles['daily-schedule__text']}>Программа может меняться в зависимости от потребностей группы и погоды, чтобы каждый участник получил максимум <br /> от путешествия.</p>
         </ContentWrapper>
 
-        <Image src="/daily-schedule/daily-schedule_1.gif" alt="woman" width={500} height={500} className={styles['daily-schedule__video']} />
+        {/* <Image src="/daily-schedule/daily-schedule_1.gif" alt="woman" width={500} height={500} className={styles['daily-schedule__video']} /> */}
+        <video src="/daily-schedule/daily-schedule.mp4" webkit-playsinline="true" autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['daily-schedule__video']} />
       </div>
     </section>
   );
