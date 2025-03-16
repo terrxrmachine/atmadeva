@@ -34,15 +34,13 @@ const WhoIsItFor = () => {
             <p>Открыт к новому, самопознанию и духовным инсайтам</p>
           </div>
         </div>
-
-        <div className={styles['who-is-it-for__video-wrapper']}>
+      </ContentWrapper>
+      <center className={styles['who-is-it-for__video-wrapper']}>
           <video src="/who-is-it-for/wiif.webm" webkit-playsinline="true" autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['who-is-it-for__video']} />
           <div className={styles['who-is-it-for__video-quote']}>
-            <p className={styles['who-is-it-for__video-text']}>Неважно, есть ли у вас опыт в йоге и медитации — все практики адаптированы и подходят даже для новичков. Все маршруты и трекинги также среднего уровня сложности. Главное — ваше намерение окунуться в это удивительное путешествие!</p>
+            <p className={styles['who-is-it-for__video-text']}>Неважно, есть ли у вас опыт <br /> в йоге и медитации — все практики адаптированы <br /> и подходят даже для новичков. <br /> Все маршруты и трекинги также среднего уровня сложности. <br /> Главное — ваше намерение окунуться в это удивительное путешествие!</p>
           </div>
-        </div>
-      </ContentWrapper>
-
+      </center>
 
     </section>
   );

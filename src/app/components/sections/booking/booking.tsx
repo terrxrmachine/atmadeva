@@ -183,7 +183,7 @@ const Booking = () => {
             </div>
             
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'забронировать место'}
+              {isSubmitting ? 'Отправка...' : 'Написать Елизавете'}
             </Button>
             {submitStatus.message && (
               <div className={`${styles.status_message} ${styles[submitStatus.type]}`}>

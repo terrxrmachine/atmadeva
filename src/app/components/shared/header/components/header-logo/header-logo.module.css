@@ -1,5 +1,5 @@
 .logo {
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 5vw + 1rem, 1.3rem);
   font-weight: 700;
   color: var(--deep-purple);
   cursor: pointer;

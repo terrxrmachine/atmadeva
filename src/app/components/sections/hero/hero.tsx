@@ -18,15 +18,6 @@ export default function Hero() {
 
   return (
     <div className={styles.hero}>
-      <Image 
-        src="/hero.jpg" 
-        alt="Hero Image" 
-        width={1000} 
-        height={1000} 
-        className={styles.hero__image} 
-        priority
-      />
-      
       <div className={styles.hero__content}>
         <h1 className={styles.hero__title}>
           <span className={styles.hero__title_accent}>
@@ -37,15 +28,23 @@ export default function Hero() {
         </h1>
 
         <p className={styles.hero__description}>
-          Йога, медитации, астрология, звукотерапия и путешествия в горах Гималаев
+          Йога, медитации, астрология, звукотерапия <br /> и путешествия в горах Гималаев
         </p>
 
         <DateLocation />
 
         <div className={styles.hero__button}>
-          <Button onClick={scrollToBooking}>Узнать больше</Button>
+          <Button onClick={scrollToBooking}>Забронировать место</Button>
         </div>
       </div>
+      <Image 
+        src="/hero.jpg" 
+        alt="Hero Image" 
+        width={1000} 
+        height={1000} 
+        className={styles.hero__image} 
+        priority
+      />
     </div>
   );
 };

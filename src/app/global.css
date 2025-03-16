@@ -243,10 +243,6 @@ label {
     max-height: none !important;
   }
   
-  img, video {
-    max-height: 500px !important;
-  }
-  
   .grid, .flex {
     display: flex !important;
     flex-wrap: wrap !important;

@@ -1,10 +1,9 @@
 "use client";
-
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import styles from './team-card.module.css';
 import MoreButton from "../more-button/more-button";
-import TeamModal from '../team-modal/team-modal';
+import PhotoCarousel from '@/app/components/ui/photo-carousel/photo-carousel';
 import SMMButton from '@/app/components/ui/smm-button/smm-button';
 
 interface TeamCardProps {
@@ -19,62 +18,110 @@ interface TeamCardProps {
   }[];
   instagram?: string;
   telegram?: string;
+  isDesktop: boolean;
+  onExpand: (height: number, id: number) => void;
+  maxHeight: number;
+  id: number;
+  isExpanded: boolean;
 }
 
-export default function TeamCard({ 
-  imageSrc, 
-  alt, 
-  name, 
-  position, 
+export default function TeamCard({
+  imageSrc,
+  alt,
+  name,
+  position,
   description,
   galleryImages = [],
   instagram,
-  telegram
+  telegram,
+  isDesktop,
+  onExpand,
+  maxHeight,
+  id,
+  isExpanded
 }: TeamCardProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const expandedContentRef = useRef<HTMLDivElement>(null);
   
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-  
-  // Создаем массив для фотокарусели, добавляя основное изображение, если его нет в галерее
+  // Create array for photo carousel, adding the main image if not in gallery
   const allPhotos = [
     { src: imageSrc, alt },
     ...galleryImages.filter(img => img.src !== imageSrc)
   ];
-
+  
+  const toggleExpand = () => {
+    if (!isExpanded) {
+      // Calculate height of expanded content for consistent sizing
+      const expandedHeight = expandedContentRef.current?.scrollHeight || 0;
+      onExpand(expandedHeight, id);
+    } else {
+      onExpand(0, id);
+    }
+  };
+  
+  useEffect(() => {
+    // Recalculate heights when window resizes
+    const handleResize = () => {
+      if (isExpanded && expandedContentRef.current) {
+        const expandedHeight = expandedContentRef.current.scrollHeight;
+        onExpand(expandedHeight, id);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isExpanded, onExpand, id]);
+  
   return (
-    <>
-      <div className={styles['team-card']}>
-        <Image 
-          src={imageSrc} 
-          alt={alt} 
-          width={500} 
-          height={500} 
-          className={styles['team-card__img']}
-          priority
-        />
+    <div className={`${styles['team-card']} ${isExpanded ? styles['team-card--expanded'] : ''}`}>
+      {/* Regular card content (always visible) */}
+      <div className={styles['team-card__main']}>
+        <div className={styles['team-card__image-container']}>
+          <PhotoCarousel showCaption={false} photos={allPhotos} />
+        </div>
         <div className={styles['team-card__content']}>
-          <p className={styles['team-card__text']}>
-            <span className={styles['team-card__name']}>{name}</span> {position}
-            <span className={styles['team-card__actions']}>
-              {instagram && <SMMButton type="instagram" href={instagram} size="medium" />}
-              {telegram && <SMMButton type="telegram" href={telegram} size="medium" />}
-            </span>
-          </p>
-          <div className={styles['team-card__actions']}>
-            <MoreButton onClick={openModal} />
+          <div className={styles['team-card__fixed-content']}>
+            <p className={styles['team-card__text']}>
+              <span className={styles['team-card__name']}>{name}</span> {position}
+            </p>
+          </div>
+          
+          {/* Expandable content */}
+          <div
+            className={styles['team-card__expanded-content']}
+            ref={expandedContentRef}
+            style={{
+              maxHeight: isExpanded ? (isDesktop ? `${maxHeight}px` : 'none') : '0',
+              opacity: isExpanded ? 1 : 0
+            }}
+          >
+            <div className={styles['team-card__expanded-info']}>
+              <p className={styles['team-card__description']}>
+                {description}
+              </p>
+            </div>
+          </div>
+          
+          {/* Footer with social media and action buttons */}
+          <div className={styles['team-card__footer']}>
+            {/* Social media buttons in their own container */}
+            {(instagram || telegram) && (
+              <div className={styles['team-card__social-buttons']}>
+                {instagram && <SMMButton type="instagram" href={instagram} size="medium" />}
+                {telegram && <SMMButton type="telegram" href={telegram} size="medium" />}
+              </div>
+            )}
+            
+            {/* Details button in its own container below social buttons */}
+            <div className={styles['team-card__details-button']}>
+              <MoreButton onClick={toggleExpand}>
+                {isExpanded ? 'Скрыть подробности' : 'Узнать подробности'}
+              </MoreButton>
+            </div>
           </div>
         </div>
       </div>
-      
-      <TeamModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        name={name}
-        position={position}
-        description={description}
-        photos={allPhotos}
-      />
-    </>
+    </div>
   );
 }
