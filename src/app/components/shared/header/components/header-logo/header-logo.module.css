@@ -9,6 +9,10 @@
   align-items: center;
   gap: 8px;
   flex-direction: row;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .logo:hover {
