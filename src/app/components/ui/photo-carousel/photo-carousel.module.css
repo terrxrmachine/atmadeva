@@ -3,6 +3,8 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+
   @media (min-width: 768px) {
     box-shadow: none;
   }
@@ -68,7 +70,8 @@
   align-items: center;
   justify-content: flex-end;
   height: 100%;
-  padding-bottom: 12px;
+  /* padding-bottom: 12px; */
+
 }
 
 .caption {

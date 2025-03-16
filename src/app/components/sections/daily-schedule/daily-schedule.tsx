@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 
+import Image from 'next/image';
 import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 import styles from './daily-schedule.module.css';
 
@@ -31,17 +32,15 @@ export default function DailySchedule() {
               <span>🍲 Ужин</span> — теплая атмосфера и обмен впечатлениями
             </li>
             <li className={styles['daily-schedule__list-item']}>
-              <span>🌙 Вечерняя медитация</span> — мягкое завершение дня и подготовка ко сну
+              <span>🌙 Вечерняя медитация</span> — мягкое завершение дня <br /> и подготовка ко сну
             </li>
           </ul>
 
-          <p className={styles['daily-schedule__text']}>Программа может меняться в зависимости от потребностей группы и погоды, чтобы каждый участник получил максимум от путешествия.</p>
+          <p className={styles['daily-schedule__text']}>Программа может меняться в зависимости от потребностей группы и погоды, чтобы каждый участник получил максимум <br /> от путешествия.</p>
         </ContentWrapper>
 
-        <video src="/daily-schedule/daily-schedule.webm" webkit-playsinline="true" autoPlay loop muted playsInline onCanPlayThrough={(e) => (e.target as HTMLVideoElement).play()} className={styles['daily-schedule__video']} />
+        <Image src="/daily-schedule/daily-schedule_1.gif" alt="woman" width={500} height={500} className={styles['daily-schedule__video']} />
       </div>
-
-
     </section>
   );
 }

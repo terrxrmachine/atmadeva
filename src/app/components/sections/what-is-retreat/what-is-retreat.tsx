@@ -8,7 +8,7 @@ import QuoteCard from '../../ui/quote-card/quote-card';
 
 export default function WhatIsRetreat() {
   return (
-    <section id="about">
+    <section id="about" className={styles['what-is-retreat']}>
       <div className={styles['what-is-retreat__grid']}>
         
         <Image src="/what-is-retreat/retreat.webp" alt="Retreat Image" width={1000} height={1000} className={styles['what-is-retreat__img']} priority/>

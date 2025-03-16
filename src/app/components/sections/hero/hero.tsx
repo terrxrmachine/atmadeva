@@ -17,7 +17,15 @@ export default function Hero() {
   };
 
   return (
-    <div className={styles.hero}>
+    <div id="hero" className={styles.hero}>
+            <Image 
+        src="/hero.jpg" 
+        alt="Hero Image" 
+        width={1000} 
+        height={1000} 
+        className={styles.hero__image_mob} 
+        priority
+      />
       <div className={styles.hero__content}>
         <h1 className={styles.hero__title}>
           <span className={styles.hero__title_accent}>

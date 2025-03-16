@@ -1,26 +1,26 @@
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './header-logo.module.css';
 import Image from 'next/image';
 
 export default function HeaderLogo() {
     const pathname = usePathname();
-    const isGalleryPage = pathname === '/gallery';
+    const router = useRouter();
 
-    // If on gallery page, make logo clickable to return to home page
-    if (isGalleryPage) {
-        return (
-            <Link href="/" className={styles.logo}>
-                ĀtmāDeva Retreats
-            </Link>
-        );
-    }
+    const handleLogoClick = () => {
+        if (pathname === '/gallery') {
+            router.push('/#hero');
+        } else {
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                heroSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
 
-    // On main page, logo doesn't need to be a link
     return (
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={handleLogoClick}>
             <Image src="/logo-atmadeva.png" alt="Logo" width={32} height={32} className={styles.logo__image}/>
             ĀtmāDeva Retreats
         </div>

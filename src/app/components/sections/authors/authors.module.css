@@ -66,3 +66,11 @@
     width: 100%;
     max-width: 100%;
 }
+
+.authors__br {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}

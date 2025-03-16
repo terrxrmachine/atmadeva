@@ -12,3 +12,11 @@
     width: 100%;
     box-sizing: border-box;
 }
+
+.location__br {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;  
+    }
+}

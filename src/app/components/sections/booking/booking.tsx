@@ -99,12 +99,13 @@ const Booking = () => {
         </div>
         <div className={styles.booking__contacts}>
           <div className={styles.booking__contact_block}>
+            <p>Написать Елизавете</p>
             <div className={styles.contact__photo}>
               <Image
                 src="/booking/liz.webp"
                 alt="Елизавета"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
                 className={styles.contact__image}
                 priority
               />
@@ -112,14 +113,14 @@ const Booking = () => {
             <div className={styles.contact__info}>
               <Link href="tel:+79168199227" className={styles.contact__link}>
                 <p className={styles.contact__text}>
-                  <Phone />
+                  <Phone className={styles.contact__icon}/>
                   +7 (916) 819-92-27
                 </p>
               </Link>
-              <Link href="mailto:kusova.lizaveta@gmail.com" className={styles.contact__link}>
+              <Link href="mailto:elizaveta.kantz@yandex.com" className={styles.contact__link}>
                 <p className={styles.contact__text}>
-                  <Mail />
-                  kusova.lizaveta@gmail.com
+                  <Mail className={styles.contact__icon}/>
+                  elizaveta.kantz<br className={styles.contact__br}/>@yandex.com
                 </p>
               </Link>
               <div className={styles.contact__social}>
@@ -183,7 +184,7 @@ const Booking = () => {
             </div>
             
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'Написать Елизавете'}
+              {isSubmitting ? 'Отправка...' : 'Отправить'}
             </Button>
             {submitStatus.message && (
               <div className={`${styles.status_message} ${styles[submitStatus.type]}`}>

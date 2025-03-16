@@ -79,7 +79,7 @@ const PlacesToVisit = () => {
         <div className={styles['places-to-visit__list']}>
           <div className={styles['places-to-visit__list_item']}>
             <h3 className={styles['places-to-visit__list_title']}><label htmlFor="1">1</label> Верхний Баксу</h3>
-            <p>— прогулка по старинным улочкам, посещение базара, храм у источника и трек к водопаду</p>
+            <p>— прогулка по старинным улочкам, посещение базара, храм у источника <br /> и трек к водопаду</p>
           </div>
           <div className={styles['places-to-visit__list_item']}>
             <h3 className={styles['places-to-visit__list_title']}><label htmlFor="2">2</label> Водопад Галлу, Дарамкот</h3>

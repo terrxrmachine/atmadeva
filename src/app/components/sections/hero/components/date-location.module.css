@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: flex-start; /* Выровняет содержимое по правому краю */
+    align-items: center; /* Выровняет содержимое по правому краю */
+
+    @media (min-width: 768px) {
+        align-items: flex-start;
+    }
 }
 
 .date-location__item {
