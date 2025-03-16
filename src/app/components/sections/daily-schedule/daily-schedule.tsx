@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 
-import Image from 'next/image';
 import ContentWrapper from '../../ui/content-wrapper/content-wrapper';
 import styles from './daily-schedule.module.css';
 
