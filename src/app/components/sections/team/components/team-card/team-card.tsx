@@ -1,6 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from 'react';
-import Image from "next/image";
+import { useRef, useEffect } from 'react';
 import styles from './team-card.module.css';
 import MoreButton from "../more-button/more-button";
 import PhotoCarousel from '@/app/components/ui/photo-carousel/photo-carousel';
