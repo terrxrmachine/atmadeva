@@ -72,7 +72,7 @@ const Booking = () => {
 
   // Получаем placeholder в зависимости от выбранного мессенджера
   const getPhonePlaceholder = () => {
-    return selectedMessenger === 'telegram' ? 'Номер или тэг для Telegram' : 'Номер телефона для WhatsApp';
+    return selectedMessenger === 'telegram' ? 'Номер или тэг для Telegram' : 'Номер для WhatsApp';
   };
 
   return (

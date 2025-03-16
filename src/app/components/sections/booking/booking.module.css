@@ -131,7 +131,7 @@
     height: 120px; /* Немного уменьшена высота */
     overflow: hidden;
     max-width: 100%;
-    transform: scale(1.2); /* Эффект при наведении */
+    transform: translateX(-10px) scale(1.4);
 }
 
 
