@@ -8,6 +8,7 @@ import SMMButton from '../../ui/smm-button/smm-button';
 import { Phone, Mail } from 'lucide-react';
 import { Input } from '@/app/components/ui/input';
 import Button from '../../ui/button/button';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/app/components/ui/accordion';
 
 const Booking = () => {
   // Состояния для полей формы
@@ -17,6 +18,7 @@ const Booking = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const [selectedMessenger, setSelectedMessenger] = useState('telegram'); // По умолчанию выбран Telegram
+  const [selectedDate, setSelectedDate] = useState('may'); // По умолчанию выбрана майская дата
 
   // Функция для отправки данных в Telegram
   const sendToTelegram = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +36,8 @@ const Booking = () => {
     try {
       // Формируем сообщение
       const messenger = selectedMessenger === 'telegram' ? 'Telegram' : 'WhatsApp';
-      const message = `🔔 Новая заявка на бронирование!\n\n👤 Имя: ${name}\n📱 E-mail: ${contact}\n☎️ ${messenger}: ${phone}`;
+      const date = selectedDate === 'may' ? '1-12 Мая 2025' : '1-12 Октября 2025';
+      const message = `🔔 Новая заявка на бронирование!\n\n👤 Имя: ${name}\n📱 E-mail: ${contact}\n☎️ ${messenger}: ${phone}\n📅 Дата ретрита: ${date}`;
       
       // Отправка данных на ваш сервер/API endpoint
       const response = await fetch('/api/send-to-telegram', {
@@ -47,6 +50,7 @@ const Booking = () => {
           contact,
           phone,
           messenger,
+          selectedDate: date,
           message
         }),
       });
@@ -138,22 +142,59 @@ const Booking = () => {
             </div>
           </div>
           <form className={styles.booking__form} onSubmit={sendToTelegram}>
-            <Input 
-              type="text" 
-              placeholder="Имя" 
-              className={styles.booking__input} 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-            <Input 
-              type="text" 
-              placeholder="Email" 
-              className={styles.booking__input} 
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-              required
-            />
+            {/* Аккордеон для выбора даты ретрита */}
+            <div className={styles.date_accordion_container}>
+              <p className={styles.toggle_label}>Выберите дату ретрита:</p>
+              <Accordion type="single" collapsible className={styles.date_accordion}>
+                <AccordionItem value="dates" className={styles.date_accordion_item}>
+                  <AccordionTrigger className={styles.date_accordion_trigger}>
+                    {selectedDate === 'may' ? '1-12 Мая 2025 (4 из 10 мест)' : '1-12 Октября 2025 (10 из 10 мест)'}
+                  </AccordionTrigger>
+                  <AccordionContent className={styles.date_accordion_content}>
+                    <div className={styles.date_options}>
+                      <div 
+                        className={`${styles.date_option} ${selectedDate === 'may' ? styles.active : ''}`}
+                        onClick={() => setSelectedDate('may')}
+                      >
+                        <div className={styles.date_option_header}>
+                          <span className={styles.date_option_radio}></span>
+                          <span className={styles.date_option_title}>1-12 Мая 2025 (4 из 10 мест)</span>
+                        </div>
+                        <p className={styles.date_option_description}>Майский ретрит в Индии. Идеальное время для погружения в практику йоги и медитации.</p>
+                      </div>
+                      <div 
+                        className={`${styles.date_option} ${selectedDate === 'october' ? styles.active : ''}`}
+                        onClick={() => setSelectedDate('october')}
+                      >
+                        <div className={styles.date_option_header}>
+                          <span className={styles.date_option_radio}></span>
+                          <span className={styles.date_option_title}>1-12 Октября 2025 (10 из 10 мест)</span>
+                        </div>
+                        <p className={styles.date_option_description}>Октябрьский ретрит в Индии. Прекрасная погода и меньше туристов.</p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+            <div className={styles.form_row}>
+              <Input 
+                type="text" 
+                placeholder="Имя" 
+                className={styles.booking__input} 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <Input 
+                type="text" 
+                placeholder="Email" 
+                className={styles.booking__input} 
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                required
+              />
+            </div>
             
             {/* Переключатель мессенджеров */}
             <div className={styles.messenger_toggle}>

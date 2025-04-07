@@ -6,8 +6,11 @@ export default function DateLocation() {
         <div className={styles['date-location']}>
             <div className={styles['date-location__item']}>
                 <DateIcon />
-                <p className={styles['date-location__text']}>Даты: <span>1–12 Октября 2025</span></p>
+                <p className={styles['date-location__text']}>Даты проведения:</p>
             </div>
+
+            <p className={styles['date-location__text']}><span>1–12 Мая 2025</span></p>
+            <p className={styles['date-location__text']}><span>1–12 Октября 2025</span></p>
 
             <div className={styles['date-location__item']}>
                 <LocationIcon />
