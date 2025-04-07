@@ -19,6 +19,7 @@ const Booking = () => {
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const [selectedMessenger, setSelectedMessenger] = useState('telegram'); // По умолчанию выбран Telegram
   const [selectedDate, setSelectedDate] = useState('may'); // По умолчанию выбрана майская дата
+  const [openAccordion, setOpenAccordion] = useState<string>("");
 
   // Функция для отправки данных в Telegram
   const sendToTelegram = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -145,7 +146,13 @@ const Booking = () => {
             {/* Аккордеон для выбора даты ретрита */}
             <div className={styles.date_accordion_container}>
               <p className={styles.toggle_label}>Выберите дату ретрита:</p>
-              <Accordion type="single" collapsible className={styles.date_accordion}>
+              <Accordion 
+                type="single" 
+                collapsible 
+                className={styles.date_accordion}
+                value={openAccordion}
+                onValueChange={setOpenAccordion}
+              >
                 <AccordionItem value="dates" className={styles.date_accordion_item}>
                   <AccordionTrigger className={styles.date_accordion_trigger}>
                     {selectedDate === 'may' ? '1-12 Мая 2025 (4 из 10 мест)' : '1-12 Октября 2025 (10 из 10 мест)'}
@@ -154,7 +161,10 @@ const Booking = () => {
                     <div className={styles.date_options}>
                       <div 
                         className={`${styles.date_option} ${selectedDate === 'may' ? styles.active : ''}`}
-                        onClick={() => setSelectedDate('may')}
+                        onClick={() => {
+                          setSelectedDate('may');
+                          setOpenAccordion(""); // Close the accordion
+                        }}
                       >
                         <div className={styles.date_option_header}>
                           <span className={styles.date_option_radio}></span>
@@ -164,7 +174,10 @@ const Booking = () => {
                       </div>
                       <div 
                         className={`${styles.date_option} ${selectedDate === 'october' ? styles.active : ''}`}
-                        onClick={() => setSelectedDate('october')}
+                        onClick={() => {
+                          setSelectedDate('october');
+                          setOpenAccordion(""); // Close the accordion
+                        }}
                       >
                         <div className={styles.date_option_header}>
                           <span className={styles.date_option_radio}></span>
